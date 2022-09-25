@@ -1,0 +1,44 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:300,400,700);
+
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css);
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+.container-navbar {
+  margin: auto;
+  width: 100%;
+}
+
+.navbar {
+  padding: 40px 10px 25px 10px;
+  background: #f8f8f8;
+  font-size: 16px;
+  .navbar-left {
+    float: left;
+  }
+
+  .navbar-right {
+    float: right;
+  }
+
+  ul {
+    li {
+      display: inline;
+      padding-left: 10px;
+      padding-right: 10px;
+
+      a {
+        color: #777777;
+        text-decoration: none;
+
+        &:hover {
+          color: black;
+        }
+      }
+    }
+  }
+}
