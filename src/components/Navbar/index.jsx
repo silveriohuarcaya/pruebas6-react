@@ -18,7 +18,7 @@ const Navbar = () => (
       </ul>
       <ul className="navbar-right">
         <li>
-          <Link to="/">
+          <Link to="/verifyAccount">
             <i className="fa fa-lock" />
             Usuario
           </Link>

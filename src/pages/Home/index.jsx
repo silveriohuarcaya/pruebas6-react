@@ -3,13 +3,13 @@ import './index.scss';
 import Navbar from '../../components/Navbar';
 
 const Home = () => (
-  <div className="nav-header">
+  <div className="home">
     <Navbar />
-    <div className="container">
-      <div className="shopping-container">
+    <main>
+      <div className="home__container">
         <h1>Silverio Huarcaya</h1>
       </div>
-    </div>
+    </main>
   </div>
 );
 
