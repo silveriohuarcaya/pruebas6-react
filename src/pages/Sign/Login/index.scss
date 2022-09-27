@@ -10,74 +10,69 @@
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
-  background-color: white;
 }
 
-.login {
+.login__container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
   background-color: rgb(41, 153, 170);
+  height: 100vh;
+  width: 100%;
 }
 
-.login__container {
+.login__card {
   border-radius: 3vh;
   box-shadow: 0.2rem 1rem 1rem rgba(0, 0, 0, 0.3);
-  display: flex;
-  flex-direction: column;
   width: 50vh;
-  height: 67vh;
+  height: 64vh;
   background-color: rgb(209, 18, 114);
-  align-items: center;
   color: var(--white-text);
 }
 
 .login__form-top {
   padding: 2vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
   font-size: 11vh;
+  display: flex;
+  justify-content: center;
 }
 
-.login__form-login {
+.login__form-title {
   display: flex;
   flex-direction: column;
   align-items: center;
   font-size: 5vh;
+  margin-bottom: 0.2em;
 
   h1 {
-    font-size: 7vh;
-    margin-bottom: 1rem;
+    font-size: 5vh;
   }
 }
 
 .login__form-content {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 35vh;
-  height: 30vh;
+  flex-direction: column;
+  width: 50vh;
+  height: 25vh;
 
   p {
-    font-size: 2.5vh;
+    font-size: 2vh;
   }
 }
 
-.form__group {
+.login__form-group {
   display: flex;
   flex-direction: column;
   width: 35vh;
   height: 30vh;
 }
 
-.form__input {
+.login__form-input {
   color: rgb(97, 94, 94);
-  font-size: 3vh;
+  font-size: 2.5vh;
   margin-top: 0.4vh;
   margin-bottom: 0.6vh;
   padding: 0.5vh;
@@ -85,20 +80,21 @@ body {
   height: 5vh;
 }
 
-.form__button {
-  padding: 0.5vh;
+.login__form-button {
+  padding: 0.9vh;
   background-color: rgba(40, 151, 51);
-  margin: 3vh;
+  margin: 3vh 0 0 0;
   border: 0vh;
-  width: 20vh;
+  width: 18vh;
   height: 5vh;
-  font-size: 3vh;
+  font-size: 2.5vh;
 }
 
 .login__networks {
   display: flex;
   align-items: center;
   justify-content: space-around;
+  margin-top: 3vh;
   font-size: 3vh;
 
   .fa-facebook:before {
@@ -115,8 +111,8 @@ body {
 }
 
 /* media queries */
-@media (max-width: 1030px) {
-  .login__container {
+@media (min-width: 1030px) {
+  .login {
     flex-direction: row;
     justify-content: center;
     align-items: center;

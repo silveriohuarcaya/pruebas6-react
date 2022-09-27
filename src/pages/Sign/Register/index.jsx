@@ -9,22 +9,22 @@ const Register = () => {
   console.log('form', form);
 
   return (
-    <div className="register">
-      <div className="register__container">
+    <div className="register__container">
+      <div className="register__card">
         <form>
           <div className="register__form-top">
             <i className="fa fa-user-circle-o" aria-hidden="true" />
           </div>
-          <div className="register__form-register">
+          <div className="register__form-title">
             <i className="fa fa-lock" aria-hidden="true" />
             <h1>Register</h1>
           </div>
           <div className="register__form-content">
-            <div className="form-group">
+            <div className="register__form-group">
               <p>User</p>
               <input
                 type="text"
-                className="form-input"
+                className="register__form-input"
                 name="UserName"
                 id=""
                 placeholder="Username"
@@ -32,22 +32,22 @@ const Register = () => {
               />
             </div>
 
-            <div className="form-group">
+            <div className="register__form-group">
               <p>Email</p>
               <input
                 type="email"
-                className="form-input"
+                className="register__form-input"
                 name="email"
                 id=""
                 placeholder="Email"
                 onChange={handleOnchange}
               />
             </div>
-            <div className="form-group">
+            <div className="register__form-group">
               <p>Password</p>
               <input
                 type="password"
-                className="form-input"
+                className="register__form-input"
                 name="password"
                 id=""
                 placeholder="Password"
@@ -55,7 +55,7 @@ const Register = () => {
               />
             </div>
 
-            <button className="form__button" type="submit">
+            <button className="register__form-button" type="submit">
               Register
             </button>
           </div>

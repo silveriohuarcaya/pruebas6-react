@@ -25,40 +25,40 @@ const Login = () => {
   };
 
   return (
-    <div className="login">
-      <div className="login__container">
+    <div className="login__container">
+      <div className="login__card">
         <form onSubmit={handleSubmit}>
           <div className="login__form-top">
             <i className="fa fa-user-circle-o" aria-hidden="true" />
           </div>
-          <div className="login__form-login">
+          <div className="login__form-title">
             <i className="fa fa-lock" aria-hidden="true" />
             <h1>Login</h1>
           </div>
           <div className="login__form-content">
-            <div className="form__group">
+            <div className="login__form-group">
               <p>Email</p>
               <input
                 type="email"
-                className="form__input"
+                className="login__form-input"
                 name="email"
                 placeholder="Email"
                 onChange={handleChange}
               />
             </div>
 
-            <div className="form__group">
+            <div className="login__form-group">
               <p>Password</p>
               <input
                 type="password"
-                className="form__input"
+                className="login__form-input"
                 name="password"
                 placeholder="Password"
                 onChange={handleChange}
               />
             </div>
 
-            <button className="form__button" type="submit">
+            <button className="login__form-button" type="submit">
               Login
             </button>
           </div>

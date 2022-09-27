@@ -10,74 +10,68 @@
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
-  background-color: white;
 }
 
-.register {
+.register__container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
   background-color: rgb(41, 153, 170);
+  height: 100vh;
 }
 
-.register__container {
+.register__card {
   border-radius: 3vh;
   box-shadow: 0.2rem 1rem 1rem rgba(0, 0, 0, 0.3);
-  display: flex;
-  flex-direction: column;
   width: 50vh;
-  height: 67vh;
-  background-color: rgb(209, 18, 114);
-  align-items: center;
+  height: 70vh;
+  background-color: rgb(212, 28, 120);
   color: var(--white-text);
 }
 
 .register__form-top {
   padding: 2vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
   font-size: 11vh;
+  display: flex;
+  justify-content: center;
 }
 
-.register__form-login {
+.register__form-title {
   display: flex;
   flex-direction: column;
   align-items: center;
   font-size: 5vh;
+  margin-bottom: 0.2em;
 
   h1 {
-    font-size: 7vh;
-    margin-bottom: 1rem;
+    font-size: 5vh;
   }
 }
 
 .register__form-content {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 35vh;
+  flex-direction: column;
+  width: 50vh;
   height: 30vh;
 
   p {
-    font-size: 2.5vh;
+    font-size: 2vh;
   }
 }
 
-.form__group {
+.register__form-group {
   display: flex;
   flex-direction: column;
   width: 35vh;
   height: 30vh;
 }
 
-.form__input {
+.register__form-input {
   color: rgb(97, 94, 94);
-  font-size: 3vh;
+  font-size: 2.5vh;
   margin-top: 0.4vh;
   margin-bottom: 0.6vh;
   padding: 0.5vh;
@@ -85,20 +79,21 @@ body {
   height: 5vh;
 }
 
-.form__button {
-  padding: 0.5vh;
+.register__form-button {
+  padding: 0.9vh;
   background-color: rgba(40, 151, 51);
-  margin: 3vh;
+  margin: 2vh 0 0 0;
   border: 0vh;
   width: 20vh;
   height: 5vh;
-  font-size: 3vh;
+  font-size: 2.5vh;
 }
 
-.login__networks {
+.register__networks {
   display: flex;
   align-items: center;
   justify-content: space-around;
+  margin-top: 4vh;
   font-size: 3vh;
 
   .fa-facebook:before {
@@ -115,11 +110,14 @@ body {
 }
 
 /* media queries */
-@media (max-width: 1030px) {
-  .register__container {
-    flex-direction: row;
-    justify-content: center;
+@media (min-width: 1030px) {
+  .register {
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    height: auto;
+    justify-content: center;
+    background-color: rgb(41, 153, 170);
+    height: 100vh;
+    width: 100%;
   }
 }
