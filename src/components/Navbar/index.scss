@@ -14,54 +14,95 @@ $color-brand: #29aafe;
 .navbar {
   display: flex;
   flex-direction: column;
-  background: #f8f8f89a;
+  background: #f8f8f828;
   width: 100%;
   font-size: 1.5em;
 
   .navbar__left {
     float: left;
+    letter-spacing: 0.5px;
     padding: 5vh 0 1vh 2vh;
   }
 
   .navbar__right {
     float: right;
+    letter-spacing: 0.5px;
     padding: 5vh 2vh 1vh 0;
   }
-}
 
-.nav-menu {
-  display: block;
-  text-align: center;
-
-  > li {
-    position: relative;
-    display: inline-block;
-    padding: 0 2px;
-
-    &:hover > a {
-      color: $color-brand;
-    }
-  }
-
-  a {
-    display: inline-block;
-    font-size: 14px;
-    font-weight: 500;
-    letter-spacing: 1px;
-    padding: 0 12px;
-    line-height: 60px;
-    color: $color-text;
+  .navbar__link {
+    padding: 1vh;
     transition: color 0.2s linear;
-
+    color: rgb(20, 20, 109);
+    font-weight: bold;
     &:hover,
-    &:focus,
-    &.active {
+    &.focus {
       color: $color-brand;
       text-decoration: none;
     }
   }
+}
 
-  strong {
-    font-weight: 700;
+.navbar__menu {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  padding: 5vh 0 0 2vh;
+}
+.navbar__menu > li > a {
+  display: block;
+  color: white;
+  text-decoration: none;
+}
+
+.navbar__sub-menu {
+  position: absolute;
+  display: none;
+  list-style: none;
+  width: 150px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.navbar__menu li:hover .navbar__sub-menu {
+  display: block;
+}
+.navbar__sub-menu li:hover {
+  background-color: rgb(74, 31, 31);
+}
+.navbar__sub-menu li a {
+  display: block;
+  color: white;
+  padding: 15px 15px 15px 20px;
+  text-decoration: none;
+}
+
+> li {
+  position: relative;
+  display: inline-block;
+  padding: 0 2px;
+
+  &:hover > a {
+    color: $color-brand;
   }
+}
+
+a {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  padding: 0 12px;
+  line-height: 30px;
+  color: $color-text;
+  transition: color 0.2s linear;
+
+  &:hover,
+  &:focus,
+  &.active {
+    color: $color-brand;
+    text-decoration: none;
+  }
+}
+
+strong {
+  font-weight: 700;
 }

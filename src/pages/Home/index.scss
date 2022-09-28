@@ -22,8 +22,10 @@ body {
   align-items: center;
   height: 100vh;
   font-size: 10px;
-  background-color: rgb(41, 153, 170);
   color: white;
+  background-image: url('../../img/oficina.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .home__container {

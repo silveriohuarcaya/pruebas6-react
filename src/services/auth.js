@@ -20,7 +20,11 @@ export async function signup(auth) {
     },
     body: JSON.stringify(auth),
   };
-  const response = await fetch(`${BASE_URL}/auth/local/signup`, options);
+  const response = await fetch(
+    // `${BASE_URL}/auth/local/verify-account`,
+    `${BASE_URL}/api/users`,
+    options,
+  );
   return response.json();
 }
 

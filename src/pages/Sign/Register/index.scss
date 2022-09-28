@@ -16,8 +16,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  background-color: rgb(41, 153, 170);
+  background-color: rgba(41, 153, 170, 0);
   height: 100vh;
 }
 
@@ -32,7 +31,7 @@ body {
 
 .register__form-top {
   padding: 2vh;
-  font-size: 11vh;
+  font-size: 8vh;
   display: flex;
   justify-content: center;
 }
@@ -41,11 +40,11 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: 5vh;
+  font-size: 3vh;
   margin-bottom: 0.2em;
 
   h1 {
-    font-size: 5vh;
+    font-size: 4vh;
   }
 }
 
@@ -55,7 +54,7 @@ body {
   justify-content: center;
   flex-direction: column;
   width: 50vh;
-  height: 30vh;
+  height: 40vh;
 
   p {
     font-size: 2vh;
@@ -71,12 +70,12 @@ body {
 
 .register__form-input {
   color: rgb(97, 94, 94);
-  font-size: 2.5vh;
+  font-size: 2vh;
   margin-top: 0.4vh;
   margin-bottom: 0.6vh;
-  padding: 0.5vh;
+  padding: 0.3vh;
   width: 35vh;
-  height: 5vh;
+  height: 4vh;
 }
 
 .register__form-button {
@@ -93,7 +92,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  margin-top: 4vh;
+  margin-top: 2vh;
   font-size: 3vh;
 
   .fa-facebook:before {

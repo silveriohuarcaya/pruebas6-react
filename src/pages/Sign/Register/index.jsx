@@ -1,17 +1,35 @@
-import { Link } from 'react-router-dom';
-import { useForm } from 'react-hook-form';
+import { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 
 import './index.scss';
+import { signup } from '../../../services/auth';
 
 const Register = () => {
-  const { form, handleOnchange } = useForm({});
+  const navigate = useNavigate();
+  const { form, setForm } = useState({});
 
-  console.log('form', form);
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+    console.log('form', form);
+  };
+  const handleSubmit = async (e) => {
+    const registro = e.preventDefault();
+    console.log('register', registro);
+    try {
+      const response = await signup(form);
+      const { token, profile } = response;
+      localStorage.setItem('token', token);
+      localStorage.setItem('profile', JSON.stringify(profile));
+      navigate('/');
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <div className="register__container">
       <div className="register__card">
-        <form>
+        <form onSubmit={handleSubmit}>
           <div className="register__form-top">
             <i className="fa fa-user-circle-o" aria-hidden="true" />
           </div>
@@ -21,37 +39,45 @@ const Register = () => {
           </div>
           <div className="register__form-content">
             <div className="register__form-group">
-              <p>User</p>
+              <p>firstName</p>
               <input
                 type="text"
                 className="register__form-input"
-                name="UserName"
-                id=""
-                placeholder="Username"
-                onChange={handleOnchange}
+                name="firstName"
+                placeholder="firstName"
+                onChange={handleChange}
               />
             </div>
 
             <div className="register__form-group">
-              <p>Email</p>
+              <p>lastName</p>
+              <input
+                type="text"
+                className="register__form-input"
+                name="lastName"
+                placeholder="lastName"
+                onChange={handleChange}
+              />
+            </div>
+
+            <div className="register__form-group">
+              <p>email</p>
               <input
                 type="email"
                 className="register__form-input"
                 name="email"
-                id=""
-                placeholder="Email"
-                onChange={handleOnchange}
+                placeholder="email"
+                onChange={handleChange}
               />
             </div>
             <div className="register__form-group">
-              <p>Password</p>
+              <p>password</p>
               <input
                 type="password"
                 className="register__form-input"
                 name="password"
-                id=""
-                placeholder="Password"
-                onChange={handleOnchange}
+                placeholder="password"
+                onChange={handleChange}
               />
             </div>
 
