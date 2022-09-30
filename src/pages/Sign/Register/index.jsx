@@ -2,21 +2,20 @@ import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
 import './index.scss';
-import { signup } from '../../../services/auth';
+import { register } from '../../../services/auth';
 
 const Register = () => {
   const navigate = useNavigate();
-  const { form, setForm } = useState({});
+  const [form, setForm] = useState({});
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
-    console.log('form', form);
+    console.log('Register', form);
   };
   const handleSubmit = async (e) => {
-    const registro = e.preventDefault();
-    console.log('register', registro);
+    e.preventDefault();
     try {
-      const response = await signup(form);
+      const response = await register(form);
       const { token, profile } = response;
       localStorage.setItem('token', token);
       localStorage.setItem('profile', JSON.stringify(profile));

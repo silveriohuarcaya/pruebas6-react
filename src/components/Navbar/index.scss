@@ -28,6 +28,15 @@ $color-brand: #29aafe;
     float: right;
     letter-spacing: 0.5px;
     padding: 5vh 2vh 1vh 0;
+
+    .btn {
+      margin-right: 8px;
+      color: rgb(19, 77, 236);
+      opacity: 1;
+      &:hover {
+        color: rgb(155, 18, 137);
+      }
+    }
   }
 
   .navbar__link {
