@@ -10,6 +10,7 @@ const Login = () => {
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
+    console.log('Login', form);
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -42,7 +43,7 @@ const Login = () => {
                 type="email"
                 className="login__form-input"
                 name="email"
-                placeholder="Email"
+                placeholder="email"
                 onChange={handleChange}
               />
             </div>

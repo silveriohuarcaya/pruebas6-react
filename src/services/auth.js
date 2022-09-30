@@ -12,6 +12,18 @@ export async function login(auth) {
   return response.json();
 }
 
+export async function register(auth) {
+  const options = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(auth),
+  };
+  const response = await fetch(`${BASE_URL}/api/users`, options);
+  return response.json();
+}
+
 export async function signup(auth) {
   const options = {
     method: 'POST',
@@ -20,11 +32,7 @@ export async function signup(auth) {
     },
     body: JSON.stringify(auth),
   };
-  const response = await fetch(
-    // `${BASE_URL}/auth/local/verify-account`,
-    `${BASE_URL}/api/users`,
-    options,
-  );
+  const response = await fetch(`${BASE_URL}/api/user/`, options);
   return response.json();
 }
 
