@@ -20,7 +20,7 @@ const Navbar = () => {
           </Link>
         </div>
         <div className="navbar__right">
-          {profile !== 'undefined' ? (
+          {profile !== 'undefined' && profile !== null ? (
             <div className="navbar__link navbar__link--background-color">
               <span>
                 {JSON.parse(profile).firstName}
