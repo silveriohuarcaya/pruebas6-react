@@ -20,7 +20,7 @@ export async function register(auth) {
     },
     body: JSON.stringify(auth),
   };
-  const response = await fetch(`${BASE_URL}/api/users`, options);
+  const response = await fetch(`${BASE_URL}/auth/local/register`, options);
   return response.json();
 }
 

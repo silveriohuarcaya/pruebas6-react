@@ -25,9 +25,22 @@ $color-brand: #29aafe;
   }
 
   .navbar__right {
+    display: flex;
+    align-items: center;
     float: right;
     letter-spacing: 0.5px;
     padding: 5vh 2vh 1vh 0;
+
+    .navbar__link--background-color {
+      background-color: rgb(98, 177, 29);
+      color: white;
+      transition: none;
+      &:hover,
+      &.focus {
+        color: white;
+        text-decoration: none;
+      }
+    }
 
     .btn {
       margin-right: 8px;
@@ -96,11 +109,9 @@ $color-brand: #29aafe;
 
 a {
   display: inline-block;
-  font-size: 12px;
-  font-weight: 500;
+  font-size: 1em;
   letter-spacing: 1px;
   padding: 0 12px;
-  line-height: 30px;
   color: $color-text;
   transition: color 0.2s linear;
 
