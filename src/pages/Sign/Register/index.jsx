@@ -10,7 +10,6 @@ const Register = () => {
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
-    console.log('Register', form);
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
