@@ -3,8 +3,12 @@ import { Link, Outlet } from 'react-router-dom';
 import './index.scss';
 
 const Navbar = () => {
+<<<<<<< HEAD
   const token = localStorage.getItem('token');
   const profile = JSON.parse(localStorage.getItem('profile'));
+=======
+  const profile = localStorage.getItem('profile');
+>>>>>>> a893031 (feat: fix register)
 
   return (
     <nav className="navbar">
