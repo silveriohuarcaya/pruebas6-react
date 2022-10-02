@@ -19,23 +19,41 @@ const Navbar = () => {
             Register
           </Link>
         </div>
+
         <div className="navbar__right">
-          {profile !== 'undefined' && profile !== null ? (
-            <div className="navbar__link navbar__link--background-color">
-              <span>
-                {JSON.parse(profile).firstName}
-                {` ${JSON.parse(profile).lastName}`}
-              </span>
-            </div>
-          ) : (
-            <Link className="navbar__link" to="/login">
-              Login
-            </Link>
-          )}
-          <Link className="navbar__link" to="/register">
-            Register
-          </Link>
+          <ul className="navbar__menu navbar__menu--padding">
+            {profile !== 'undefined' && profile !== null ? (
+              <li>
+                <div className="navbar__link navbar__link--background-color">
+                  <span>
+                    {JSON.parse(profile).firstName}
+                    {` ${JSON.parse(profile).lastName}`}
+                  </span>
+                </div>
+
+                <ul className="navbar__sub-menu">
+                  <li>
+                    <Link className="navbar__link" to="/signOut">
+                      Sign Out
+                    </Link>
+                  </li>
+                </ul>
+              </li>
+            ) : (
+              <li>
+                <Link className="navbar__link" to="/login">
+                  Login
+                </Link>
+              </li>
+            )}
+            <li>
+              <Link className="navbar__link" to="/register">
+                Register
+              </Link>
+            </li>
+          </ul>
         </div>
+
         <nav>
           <ul className="navbar__menu">
             <li>

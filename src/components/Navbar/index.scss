@@ -34,7 +34,6 @@ $color-brand: #29aafe;
     .navbar__link--background-color {
       background-color: rgb(98, 177, 29);
       color: white;
-      transition: none;
       &:hover,
       &.focus {
         color: white;
@@ -71,6 +70,11 @@ $color-brand: #29aafe;
   justify-content: center;
   padding: 5vh 0 0 2vh;
 }
+
+.navbar__menu--padding {
+  padding: 0;
+}
+
 .navbar__menu > li > a {
   display: block;
   color: white;
@@ -82,13 +86,13 @@ $color-brand: #29aafe;
   display: none;
   list-style: none;
   width: 150px;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.317);
 }
 .navbar__menu li:hover .navbar__sub-menu {
   display: block;
 }
 .navbar__sub-menu li:hover {
-  background-color: rgb(74, 31, 31);
+  background-color: rgba(74, 31, 31, 0);
 }
 .navbar__sub-menu li a {
   display: block;
