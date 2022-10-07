@@ -9,8 +9,8 @@ const Navbar = () => {
     <nav className="navbar">
       <div className="navbar__container">
         <div className="navbar__left">
-          <Link className="navbar__link" to="/">
-            Home
+          <Link className="navbar__link" to="/payment">
+            Payment
           </Link>
           <Link className="navbar__link" to="/login">
             Login
