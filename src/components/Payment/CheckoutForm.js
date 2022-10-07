@@ -34,7 +34,7 @@ const CheckoutForm = () => {
     const response = await fetch(`${BASE_URL}/api/payments`, options);
     const body = await response.json();
     console.log('body(((())))]', body);
-    // elements.getElement(CardElement).clear();
+    elements.getElement(CardElement).clear();
   };
 
   return (
