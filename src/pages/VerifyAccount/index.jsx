@@ -13,8 +13,11 @@ const VerifyAccount = () => {
   const handleActivate = async () => {
     try {
       const data = await verify(token);
-      localStorage.setItem('token', data.token);
-      localStorage.setItem('profile', JSON.stringify(data.profile));
+      console.log('silverio huarcaya', data);
+      if (data.message === 'Account activated') {
+        localStorage.setItem('token', data.token);
+        localStorage.setItem('profile', JSON.stringify(data.profile));
+      }
       navigate('/');
     } catch (error) {
       console.error(error);

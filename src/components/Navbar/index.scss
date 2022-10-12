@@ -34,6 +34,7 @@ $color-brand: #29aafe;
     .navbar__link--background-color {
       background-color: rgb(98, 177, 29);
       color: white;
+      text-transform: capitalize;
       &:hover,
       &.focus {
         color: white;

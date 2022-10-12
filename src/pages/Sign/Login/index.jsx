@@ -6,20 +6,29 @@ import { login } from '../../../services/auth';
 
 const Login = () => {
   const navigate = useNavigate();
+  const [loginError, setLoginError] = useState(false);
+  const [activeLogin, setActiveLogin] = useState(false);
   const [form, setForm] = useState({});
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
-    console.log('Login', form);
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       const response = await login(form);
-      const { token, profile } = response;
-      localStorage.setItem('token', token);
-      localStorage.setItem('profile', JSON.stringify(profile));
-      navigate('/');
+      if (response.error === 'Password incorrect' || response.error === 'Email not found') {
+        setActiveLogin(false);
+        setLoginError(true);
+      } else if (!response.profile.isActive) {
+        setActiveLogin(true);
+        setLoginError(false);
+      } else {
+        const { token, profile } = response;
+        localStorage.setItem('token', token);
+        localStorage.setItem('profile', JSON.stringify(profile));
+        navigate('/');
+      }
     } catch (error) {
       console.log(error);
     }
@@ -45,6 +54,7 @@ const Login = () => {
                 name="email"
                 placeholder="email"
                 onChange={handleChange}
+                required
               />
             </div>
 
@@ -56,7 +66,10 @@ const Login = () => {
                 name="password"
                 placeholder="Password"
                 onChange={handleChange}
+                required
               />
+              {loginError ? <span>Email or Password incorrect</span> : <p> </p>}
+              {activeLogin ? <span>First activate your email</span> : <p> </p>}
             </div>
 
             <button className="login__form-button" type="submit">

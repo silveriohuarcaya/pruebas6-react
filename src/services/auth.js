@@ -37,8 +37,11 @@ export async function signup(auth) {
 }
 
 export async function verify(token) {
-  const response = await fetch(
-    `${BASE_URL}/auth/local/verify-account/${token}`,
-  );
+  const response = await fetch(`${BASE_URL}/auth/local/verify-account/${token}`);
+  return response.json();
+}
+
+export async function active(token) {
+  const response = await fetch(`${BASE_URL}/auth/local/verify-email/${token}`);
   return response.json();
 }

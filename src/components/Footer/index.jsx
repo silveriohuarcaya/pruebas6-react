@@ -1,5 +1,7 @@
+import './index.scss';
+
 const Footer = () => (
-  <footer className="footer">
+  <footer>
     <p>Pie de pagina</p>
   </footer>
 );

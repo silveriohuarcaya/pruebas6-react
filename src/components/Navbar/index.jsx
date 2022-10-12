@@ -3,7 +3,8 @@ import { Link, Outlet } from 'react-router-dom';
 import './index.scss';
 
 const Navbar = () => {
-  const profile = localStorage.getItem('profile');
+  const token = localStorage.getItem('token');
+  const profile = JSON.parse(localStorage.getItem('profile'));
 
   return (
     <nav className="navbar">
@@ -12,8 +13,8 @@ const Navbar = () => {
           <Link className="navbar__link" to="/payment">
             Payment
           </Link>
-          <Link className="navbar__link" to="/login">
-            Login
+          <Link className="navbar__link" to="/preference">
+            Preference
           </Link>
           <Link className="navbar__link" to="/register">
             Register
@@ -22,12 +23,12 @@ const Navbar = () => {
 
         <div className="navbar__right">
           <ul className="navbar__menu navbar__menu--padding">
-            {profile !== 'undefined' && profile !== null ? (
+            {token !== 'undefined' && token !== null && profile?.isActive ? (
               <li>
                 <div className="navbar__link navbar__link--background-color">
                   <span>
-                    {JSON.parse(profile).firstName}
-                    {` ${JSON.parse(profile).lastName}`}
+                    {profile.firstName}
+                    {` ${profile.lastName}`}
                   </span>
                 </div>
 
@@ -46,6 +47,7 @@ const Navbar = () => {
                 </Link>
               </li>
             )}
+
             <li>
               <Link className="navbar__link" to="/register">
                 Register

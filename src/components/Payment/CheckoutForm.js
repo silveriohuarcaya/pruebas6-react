@@ -27,13 +27,13 @@ const CheckoutForm = () => {
       },
       body: JSON.stringify({
         paymentMethod,
-        amount: 20_000, // cents -> $100
+        amount: 10_000, // cents -> $100
       }),
     };
 
     const response = await fetch(`${BASE_URL}/api/payments`, options);
     const body = await response.json();
-    console.log('body(((())))]', body);
+    console.log('body', body);
     elements.getElement(CardElement).clear();
   };
 
