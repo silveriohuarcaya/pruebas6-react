@@ -20,7 +20,11 @@ export async function register(auth) {
     },
     body: JSON.stringify(auth),
   };
+<<<<<<< HEAD
   const response = await fetch(`${BASE_URL}/auth/local/register`, options);
+=======
+  const response = await fetch(`${BASE_URL}/api/users`, options);
+>>>>>>> 323cf7c (feat: register)
   return response.json();
 }
 
