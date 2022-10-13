@@ -6,6 +6,7 @@ import { register } from '../../../services/auth';
 
 const Register = () => {
   const navigate = useNavigate();
+  const [registerError, setRegisterError] = useState(false);
   const [form, setForm] = useState({});
 
   const handleChange = (e) => {
@@ -15,10 +16,14 @@ const Register = () => {
     e.preventDefault();
     try {
       const response = await register(form);
-      const { token, profile } = response;
-      localStorage.setItem('token', token);
-      localStorage.setItem('profile', JSON.stringify(profile));
-      navigate('/');
+      if (response.error?.keyPattern.email === 1) {
+        setRegisterError(true);
+      } else {
+        const { token, profile } = response;
+        localStorage.setItem('token', token);
+        localStorage.setItem('profile', JSON.stringify(profile));
+        navigate('/verify-Email');
+      }
     } catch (error) {
       console.log(error);
     }
@@ -44,6 +49,7 @@ const Register = () => {
                 name="firstName"
                 placeholder="firstName"
                 onChange={handleChange}
+                required
               />
             </div>
 
@@ -55,6 +61,7 @@ const Register = () => {
                 name="lastName"
                 placeholder="lastName"
                 onChange={handleChange}
+                required
               />
             </div>
 
@@ -66,6 +73,7 @@ const Register = () => {
                 name="email"
                 placeholder="email"
                 onChange={handleChange}
+                required
               />
             </div>
             <div className="register__form-group">
@@ -76,7 +84,9 @@ const Register = () => {
                 name="password"
                 placeholder="password"
                 onChange={handleChange}
+                required
               />
+              {registerError ? <span>This email is registered</span> : <p> </p>}
             </div>
 
             <button className="register__form-button" type="submit">
