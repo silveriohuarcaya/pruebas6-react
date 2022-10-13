@@ -1,4 +1,4 @@
-const BASE_URL = `${process.env.REACT_APP_API_BASE_URL}`;
+// const BASE_URL = `${process.env.REACT_APP_API_BASE_URL}`;
 
 export async function login(auth) {
   const options = {
@@ -8,7 +8,7 @@ export async function login(auth) {
     },
     body: JSON.stringify(auth),
   };
-  const response = await fetch(`${BASE_URL}/auth/local/login`, options);
+  const response = await fetch(`${process.env.REACT_APP_API_BASE_URL}/auth/local/login`, options);
   return response.json();
 }
 
@@ -20,7 +20,7 @@ export async function register(auth) {
     },
     body: JSON.stringify(auth),
   };
-  const response = await fetch(`${BASE_URL}/auth/local/register`, options);
+  const response = await fetch(`${process.env.REACT_APP_API_BASE_URL}/auth/local/register`, options);
   return response.json();
 }
 
@@ -32,16 +32,16 @@ export async function signup(auth) {
     },
     body: JSON.stringify(auth),
   };
-  const response = await fetch(`${BASE_URL}/api/user/`, options);
+  const response = await fetch(`${process.env.REACT_APP_API_BASE_URL}/api/user/`, options);
   return response.json();
 }
 
 export async function verify(token) {
-  const response = await fetch(`${BASE_URL}/auth/local/verify-account/${token}`);
+  const response = await fetch(`${process.env.REACT_APP_API_BASE_URL}/auth/local/verify-account/${token}`);
   return response.json();
 }
 
 export async function active(token) {
-  const response = await fetch(`${BASE_URL}/auth/local/verify-email/${token}`);
+  const response = await fetch(`${process.env.REACT_APP_API_BASE_URL}/auth/local/verify-email/${token}`);
   return response.json();
 }
