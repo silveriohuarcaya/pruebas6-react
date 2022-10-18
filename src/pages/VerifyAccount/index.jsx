@@ -1,4 +1,4 @@
-// import { useEffect } from 'react';
+import { useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 
 import { verify } from '../../services/auth';
@@ -10,40 +10,40 @@ const VerifyAccount = () => {
   const { token } = useParams();
   const navigate = useNavigate();
 
-  const handleActivate = async () => {
-    try {
+  // const handleActivate = async () => {
+  //   try {
+  //     const data = await verify(token);
+  //     console.log('silverio huarcaya', data);
+  //     if (data.message === 'Account activated') {
+  //       localStorage.setItem('token', data.token);
+  //       localStorage.setItem('profile', JSON.stringify(data.profile));
+  //     }
+  //     navigate('/');
+  //   } catch (error) {
+  //     console.error(error);
+  //   }
+  // };
+
+  useEffect(() => {
+    const verifyAccount = async () => {
       const data = await verify(token);
-      console.log('silverio huarcaya', data);
       if (data.message === 'Account activated') {
         localStorage.setItem('token', data.token);
         localStorage.setItem('profile', JSON.stringify(data.profile));
       }
       navigate('/');
-    } catch (error) {
-      console.error(error);
-    }
-  };
-
-  // useEffect(() => {
-  //   const verifyAccount = async () => {
-  //     const data = await verify(token);
-  //     console.log('wilfredo', token);
-  //     console.log('Wiily-data', data);
-  //     localStorage.setItem('token', data.token);
-  //     localStorage.setItem('profile', JSON.stringify(data.profile));
-  //     navigate('/');
-  //   };
-  //   verifyAccount();
-  // }, []);
+    };
+    verifyAccount();
+  }, []);
 
   return (
     <div className="verifyaccount">
       <div className="verifyaccount__container">
-        <img src={jobs} alt="jobs" />
-        <h1>Active your account</h1>
-        <button type="button" onClick={handleActivate}>
+        <img className="verifyaccount__img" src={jobs} alt="jobs" />
+        <h1 className="verifyaccount__h1">Active your account</h1>
+        {/* <button className="verifyaccount__button" type="button" onClick={handleActivate}>
           Active
-        </button>
+        </button> */}
       </div>
     </div>
   );
