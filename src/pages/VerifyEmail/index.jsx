@@ -20,11 +20,11 @@ const VerifyEmail = () => {
   return (
     <div className="verifyEmail">
       <div className="verifyEmail__container">
-        <img src={logo} alt="logo" />
+        <img className="verifyEmail__img" src={logo} alt="logo" />
         <h2>Verify your Email</h2>
         <h2 className="h2--color">{data.email}</h2>
         <h3>Check to email for activate your account and start</h3>
-        <button type="button" onClick={handleActivate}>
+        <button className="verifyEmail__button" type="button" onClick={handleActivate}>
           Open Email
         </button>
       </div>

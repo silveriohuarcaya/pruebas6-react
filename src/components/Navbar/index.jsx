@@ -16,8 +16,8 @@ const Navbar = () => {
           <Link className="navbar__link" to="/preference">
             Preference
           </Link>
-          <Link className="navbar__link" to="/register">
-            Register
+          <Link className="navbar__link" to="/product">
+            Products
           </Link>
         </div>
 
