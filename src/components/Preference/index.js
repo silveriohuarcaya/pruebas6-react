@@ -6,12 +6,13 @@ const Preference = (data) => {
     locale: 'es-PE',
   });
 
+  // eslint-disable-next-line no-unused-vars
   const checkout = mp.checkout({
     preference: {
       id: data.preferenceId,
     },
+    autoOpen: true,
   });
-  checkout.open();
 };
 
 export default Preference;
