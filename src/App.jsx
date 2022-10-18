@@ -22,6 +22,9 @@ const App = () => (
     <Route path="/signOut" element={<SignOut />} />
     <Route path="/verify-Account/:token" element={<VerifyAccount />} />
     <Route path="/verify-Email" element={<VerifyEmail />} />
+    <Route path="/mercadopago/success" element={<h1>Success</h1>} />
+    <Route path="/mercadopago/failure" element={<h1>Failure</h1>} />
+    <Route path="/mercadopago/pending" element={<h1>Pending</h1>} />
   </Routes>
 );
 
