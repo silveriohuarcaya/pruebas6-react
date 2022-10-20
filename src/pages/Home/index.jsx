@@ -9,12 +9,8 @@ const Home = () => (
     <Navbar />
 
     <header>
-      <div className="home__container">
-        <h1>Silverio Huarcaya</h1>
-      </div>
+      <div className="home__container" />
     </header>
-
-    <main>Contenido</main>
 
     <Footer />
   </div>

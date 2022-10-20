@@ -16,15 +16,33 @@ body {
 
 .login__container {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
   background-color: rgba(41, 153, 170, 0);
   height: 100vh;
   width: 100%;
-  background-image: url('../../../img/oficina.jpg');
+  background-image: url('../../../img/logo3.jpg');
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 100% 100%;
+
+  .login__left {
+    width: 60%;
+    height: 100%;
+  }
+
+  .login__right {
+    display: flex;
+    align-items: center;
+    width: 40%;
+    height: 100%;
+  }
+
+  img {
+    margin: 6vh 0 0 8vh;
+    border-radius: 50%;
+    width: 20vh;
+    height: 20vh;
+  }
 }
 
 .login__card {
@@ -124,6 +142,10 @@ body {
   .fa-instagram:before {
     color: white;
   }
+}
+
+.navbar--height {
+  height: 40%;
 }
 
 /* media queries */
