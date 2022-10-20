@@ -14,11 +14,18 @@ $color-brand: #29aafe;
 .navbar {
   display: flex;
   flex-direction: column;
-  background: #f8f8f828;
+  background: #f8f8f800;
   width: 100%;
-  font-size: 1.5em;
+  font-size: 2em;
+
+  img {
+    border-radius: 50%;
+    width: 20vh;
+    height: 20vh;
+  }
 
   .navbar__left {
+    display: flex;
     float: left;
     letter-spacing: 0.5px;
     padding: 5vh 0 1vh 2vh;
@@ -53,10 +60,9 @@ $color-brand: #29aafe;
   }
 
   .navbar__link {
-    padding: 1vh;
     transition: color 0.2s linear;
-    color: rgb(20, 20, 109);
-    font-weight: bold;
+    color: white;
+    padding: 1vh;
     &:hover,
     &.focus {
       color: $color-brand;
@@ -68,7 +74,7 @@ $color-brand: #29aafe;
 .navbar__menu {
   list-style: none;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   padding: 5vh 0 0 2vh;
 }
 
@@ -130,4 +136,8 @@ a {
 
 strong {
   font-weight: 700;
+}
+
+.shopping-bars {
+  width: 30px;
 }

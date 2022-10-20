@@ -10,6 +10,7 @@ import Product from './pages/Product';
 import VerifyEmail from './pages/VerifyEmail';
 import Payment from './components/Payment';
 import Preference from './components/Preference';
+import UploadPage from './pages/Upload';
 
 const App = () => (
   <Routes>
@@ -25,6 +26,7 @@ const App = () => (
     <Route path="/mercadopago/success" element={<h1>Success</h1>} />
     <Route path="/mercadopago/failure" element={<h1>Failure</h1>} />
     <Route path="/mercadopago/pending" element={<h1>Pending</h1>} />
+    <Route path="/upload" element={<UploadPage />} />
   </Routes>
 );
 

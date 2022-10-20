@@ -1,8 +1,11 @@
+import logoFooter from '../../img/logo2.jpg';
 import './index.scss';
 
 const Footer = () => (
   <footer>
-    <p>Pie de pagina</p>
+    <div className="container">
+      <img src={logoFooter} alt="logo" />
+    </div>
   </footer>
 );
 export default Footer;
