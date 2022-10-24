@@ -2,6 +2,7 @@ import Badge from './Badge';
 import Total from './Total';
 import CartList from './CartList';
 import CheckoutButton from './CheckoutButton';
+import ClearButton from './ClearButton';
 
 const ShoppingCart = () => (
   <div className="shopping-cart">
@@ -12,8 +13,10 @@ const ShoppingCart = () => (
     </div>
 
     <CartList />
-
-    <CheckoutButton />
+    <div className="shopping-cart-footer">
+      <CheckoutButton />
+      <ClearButton />
+    </div>
   </div>
 );
 

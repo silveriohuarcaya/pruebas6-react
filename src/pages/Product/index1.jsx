@@ -8,16 +8,15 @@ import './index.scss';
 
 const Product = () => (
   <div className="container">
-    <div className="product-list">
-      <div className="login__left">
-        <Link className="login__link" to="/">
-          <img className="img-logo" src={logo} alt="logo" />
-        </Link>
-        <div className="div-title">Products</div>
-      </div>
-      <div className="product-list__container">
-        <ProductList />
-      </div>
+    <div className="login__left">
+      <Link className="login__link" to="/">
+        <img className="img-logo" src={logo} alt="logo" />
+      </Link>
+    </div>
+    {/* <br />
+      <h1>Product List</h1> */}
+    <div className="product-list__container">
+      <ProductList />
     </div>
     <div className="shopping-container">
       <ShoppingCart />

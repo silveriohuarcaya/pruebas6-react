@@ -56,28 +56,9 @@ button {
 
 .container {
   display: flex;
-  flex-direction: row;
-  margin: auto;
-  width: 100%;
-}
-
-.product-list {
-  display: flex;
   flex-direction: column;
-  width: 80%;
-}
-
-.login__left {
-  display: flex;
-
-  .div-title {
-    width: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 45px;
-  }
+  margin: auto;
+  width: 95%;
 }
 
 .product-list__container {
@@ -85,7 +66,8 @@ button {
   justify-content: flex-end;
   float: left;
   letter-spacing: 0.5px;
-  padding: 2vh 2vh 1vh 10vh;
+  padding: 4vh 0 1vh 2vh;
+  width: 78%;
 
   .product-container {
     display: flex;
@@ -124,17 +106,17 @@ button {
 
 .shopping-container {
   display: flex;
-  flex-direction: column;
+  justify-content: flex-end;
   float: right;
   letter-spacing: 0.5px;
-  // padding: 1vh 2vh 1vh 0;
-  width: 30%;
+  padding: 1vh 2vh 1vh 0;
+  width: 22%;
 }
 
 .shopping-cart {
   margin: 20px 0;
   background: white;
-  width: 280px;
+  width: 320px;
   position: relative;
   border-radius: 12px;
   padding: 10px;
