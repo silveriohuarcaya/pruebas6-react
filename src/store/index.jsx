@@ -46,30 +46,30 @@ function reduce(state, action) {
         ...state,
         cart: action.payload,
         total: 0,
+    };
+    case 'DELETE_ONE_TO_CART': {
+      return action.payload.quantity > 1
+      ? {
+        ...state,
+        cart: state.cart.map((item) => (item._id === action.payload._id
+            ? {...item, quantity: item.quantity - 1} : item)),
+        total: state.total - action.payload.price,
+      }
+      : {
+        ...state,
+        cart: state.cart.filter((item) => (item._id !== action.payload._id)),
+        total: state.total - action.payload.price,
       };
-      case 'DELETE_ONE_TO_CART': {
-        return action.payload.quantity > 1
-        ? {
-          ...state,
-          cart: state.cart.map((item) => (item._id === action.payload._id
-             ? {...item, quantity: item.quantity - 1} : item)),
-          total: state.total - action.payload.price,
-        }
-        : {
-          ...state,
-          cart: state.cart.filter((item) => (item._id !== action.payload._id)),
-          total: state.total - action.payload.price,
-        };
-      }
-      case 'DELETE_ALL_TO_CART': {
-        return {
-          ...state,
-          cart: state.cart.filter((item) => item._id !== action.payload._id),
-          total: state.total - (action.payload.price * action.payload.quantity),
-        };
-      }
+    }
+    case 'DELETE_ALL_TO_CART': {
+      return {
+        ...state,
+        cart: state.cart.filter((item) => item._id !== action.payload._id),
+        total: state.total - (action.payload.price * action.payload.quantity),
+      };
+    }
     default:
-      return state;
+    return state;
   }
 }
 
