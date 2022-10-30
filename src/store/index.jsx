@@ -20,6 +20,12 @@ function reduce(state, action) {
         ...state,
         products: action.payload,
       };
+    case 'DELETE_PRODUCT': {
+      return {
+        ...state,
+        products: state.products.filter((item) => item._id !== action.payload._id),
+      };
+    }
     case 'ADD_TO_CART': {
       const itemInCart = state.cart.find((item) => item._id === action.payload._id);
       return itemInCart

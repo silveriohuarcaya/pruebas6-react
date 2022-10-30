@@ -1,5 +1,3 @@
-// const BASE_URL = `${process.env.REACT_APP_API_BASE_URL}`;
-
 export async function login(auth) {
   const options = {
     method: 'POST',
