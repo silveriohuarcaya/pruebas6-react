@@ -16,47 +16,7 @@ const Navbar = () => {
           </Link>
         </div>
 
-        <div className="navbar__right">
-          <ul className="navbar__menu navbar__menu--padding">
-            {token !== 'undefined' && token !== null && profile?.isActive ? (
-              <li>
-                <div className="navbar__link navbar__link--background-color">
-                  <span>
-                    {profile.firstName}
-                    {` ${profile.lastName}`}
-                  </span>
-                </div>
-
-                <ul className="navbar__sub-menu">
-                  <li>
-                    <Link className="navbar__link" to="/">
-                      Account
-                    </Link>
-                  </li>
-                  <li>
-                    <Link className="navbar__link" to="/signOut">
-                      Sign Out
-                    </Link>
-                  </li>
-                </ul>
-              </li>
-            ) : (
-              <li>
-                <Link className="navbar__link" to="/login">
-                  Login
-                </Link>
-              </li>
-            )}
-
-            <li>
-              <Link className="navbar__link" to="/register">
-                Register
-              </Link>
-            </li>
-          </ul>
-        </div>
-
-        <nav>
+        <nav className="navbar__nav">
           <ul className="navbar__menu">
             <li>
               <div className="shopping-bars">
@@ -129,6 +89,46 @@ const Navbar = () => {
             </li>
           </ul>
         </nav>
+
+        <div className="navbar__right">
+          <ul className="navbar__menu navbar__menu--padding">
+            {token !== 'undefined' && token !== null && profile?.isActive ? (
+              <li>
+                <div className="navbar__link navbar__link--background-color">
+                  <span className="nick">
+                    {profile.firstName}
+                    {` ${profile.lastName}`}
+                  </span>
+                </div>
+
+                <ul className="navbar__sub-menu">
+                  <li>
+                    <Link className="navbar__link" to="/">
+                      Account
+                    </Link>
+                  </li>
+                  <li>
+                    <Link className="navbar__link" to="/signOut">
+                      Sign Out
+                    </Link>
+                  </li>
+                </ul>
+              </li>
+            ) : (
+              <li>
+                <Link className="navbar__link" to="/login">
+                  Login
+                </Link>
+              </li>
+            )}
+
+            <li>
+              <Link className="navbar__link" to="/register">
+                Register
+              </Link>
+            </li>
+          </ul>
+        </div>
       </div>
       <Outlet />
     </nav>
