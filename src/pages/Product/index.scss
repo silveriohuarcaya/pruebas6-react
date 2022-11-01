@@ -98,26 +98,65 @@ button {
     background: white;
     border-radius: 12px;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-    padding: 10px;
-    width: 140px;
+    padding: 7px;
+    width: 160px;
+    height: 270px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 
-    .item-name {
-      font-size: 16px;
-      font-weight: bold;
+    .product-img__Product {
+      height: 60%;
+
+      .img__Product {
+        border-radius: 40%;
+        width: 140px;
+        height: 140px;
+        transition: all 400ms;
+        // position: relative;
+        &:hover {
+          border-radius: 10%;
+          transform: scale(2.5);
+        }
+      }
     }
 
-    .item-price {
-      color: $main-color;
-      font-size: 16px;
-      margin-top: 10px;
-    }
+    .product__item {
+      height: 30%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
 
-    button {
-      margin-top: 10px;
+      .product-item-name {
+        height: 70%;
+        text-align: center;
+        font-size: 12px;
+        font-weight: bold;
+      }
+      .product-item-price {
+        height: 30%;
+        color: $main-color;
+        font-size: 16px;
+        margin: 5px 0;
+      }
+    }
+    .product__button {
+      display: flex;
+      width: 100%;
+      height: 10%;
+      font-size: 10px;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-around;
+      margin-top: 5px;
+
+      .user__button {
+        margin: 0;
+        width: 60px;
+        height: 25px;
+        padding: 3px;
+      }
     }
   }
 }

@@ -10,6 +10,7 @@ const UploadPage = () => {
   const handleChange = (evt) => {
     setFile(evt.target.files[0]);
   };
+
   const handleUploadFile = async () => {
     const formData = new FormData();
 

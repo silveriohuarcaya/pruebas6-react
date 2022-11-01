@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 
 import ProductItemAdmin from './ProductItemAdmin';
 import { useAppContext } from '../../store';
-import getProducts from '../../services/Products';
+import { getProducts } from '../../services/Products';
 
 const ProductListAdmin = () => {
   const { state, dispatch } = useAppContext();

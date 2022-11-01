@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 
 import ProductItem from './ProductItem';
 import { useAppContext } from '../../store';
-import getProducts from '../../services/Products';
+import { getProducts } from '../../services/Products';
 
 const ProductList = () => {
   const { state, dispatch } = useAppContext();

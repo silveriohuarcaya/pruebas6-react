@@ -8,6 +8,8 @@ import SignOut from './pages/Sign/SignOut';
 import VerifyAccount from './pages/VerifyAccount';
 import Product from './pages/Product';
 import ProductAdmin from './pages/ProductAdmin';
+import ProductAdd from './pages/ProductAdmin/ProductAdd';
+import ProductEdit from './pages/ProductAdmin/ProductEdit';
 import VerifyEmail from './pages/VerifyEmail';
 import Payment from './components/Payment';
 import Preference from './components/Preference';
@@ -19,7 +21,9 @@ const App = () => (
     <Route path="/payment" element={<Payment />} />
     <Route path="/preference" element={<Preference />} />
     <Route path="/product" element={<Product />} />
-    <Route path="/product-admin" element={<ProductAdmin />} />
+    <Route path="/product-Admin" element={<ProductAdmin />} />
+    <Route path="/product-Admin/product-Add" element={<ProductAdd />} />
+    <Route path="/product-Admin/product-Edit" element={<ProductEdit />} />
     <Route path="/login" element={<Login />} />
     <Route path="/register" element={<Register />} />
     <Route path="/signOut" element={<SignOut />} />

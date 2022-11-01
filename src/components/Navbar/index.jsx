@@ -97,7 +97,7 @@ const Navbar = () => {
 
                 <ul className="navbar__sub-menu">
                   <li>
-                    <Link className="navbar__link" to="/product-admin">
+                    <Link className="navbar__link" to="/product-Admin">
                       Products
                     </Link>
                   </li>
