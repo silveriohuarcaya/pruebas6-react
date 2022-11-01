@@ -90,26 +90,26 @@ const ProductEdit = () => {
   };
 
   return (
-    <div className="register__container">
-      <div className="register__left">
-        <Link className="register__link" to="/product-Admin">
+    <div className="productEdit__container">
+      <div className="productEdit__left">
+        <Link className="productEdit__link" to="/product-Admin">
           <img src={logo} alt="logo" />
         </Link>
       </div>
 
-      <div className="register__right">
-        <div className="register__card">
+      <div className="productEdit__right">
+        <div className="productEdit__card">
           <form onSubmit={handleSubmit}>
-            <div className="register__form-top">
-              <img className="register__img" src={image} alt="Img" />
+            <div className="productEdit__form-top">
+              <img className="productEdit__img" src={image} alt="Img" />
             </div>
 
-            <div className="register__form-content">
-              <div className="register__form-group">
+            <div className="productEdit__form-content">
+              <div className="productEdit__form-group">
                 <p>name</p>
                 <input
                   type="text"
-                  className="register__form-input"
+                  className="productEdit__form-input"
                   name="name"
                   defaultValue={name}
                   placeholder="name"
@@ -118,11 +118,11 @@ const ProductEdit = () => {
                 />
               </div>
 
-              <div className="register__form-group">
+              <div className="productEdit__form-group">
                 <p>description</p>
                 <input
                   type="text"
-                  className="register__form-input"
+                  className="productEdit__form-input"
                   name="description"
                   defaultValue={description}
                   placeholder="description"
@@ -131,11 +131,11 @@ const ProductEdit = () => {
                 />
               </div>
 
-              <div className="register__form-group">
+              <div className="productEdit__form-group">
                 <p>price</p>
                 <input
                   type="text"
-                  className="register__form-input"
+                  className="productEdit__form-input"
                   name="price"
                   defaultValue={price}
                   placeholder="price"
@@ -144,12 +144,12 @@ const ProductEdit = () => {
                 />
               </div>
 
-              <div className="register__form-group">
+              <div className="productEdit__form-group">
                 <p>img</p>
                 <input
                   type="file"
                   name="file"
-                  className="register__form-input product-img"
+                  className="productEdit__form-input productEdit-img"
                   id="file_product"
                   placeholder="Img"
                   onChange={handleChangeImg}
@@ -157,11 +157,11 @@ const ProductEdit = () => {
                 />
               </div>
 
-              <div className="register__form-group--display">
-                <button className="register__form-button" type="button" onClick={handleClickCancel}>
+              <div className="productEdit__form-group--display">
+                <button className="productEdit__form-button" type="button" onClick={handleClickCancel}>
                   Cancel
                 </button>
-                <button className="register__form-button" type="submit">
+                <button className="productEdit__form-button" type="submit">
                   Save
                 </button>
               </div>
