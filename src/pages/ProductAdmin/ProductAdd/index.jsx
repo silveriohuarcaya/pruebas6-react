@@ -85,26 +85,26 @@ const ProductAdd = () => {
   };
 
   return (
-    <div className="register__container">
-      <div className="register__left">
-        <Link className="register__link" to="/product-Admin">
+    <div className="productAdd__container">
+      <div className="productAdd__left">
+        <Link className="productAdd__link" to="/product-Admin">
           <img src={logo} alt="logo" />
         </Link>
       </div>
 
-      <div className="register__right">
-        <div className="register__card">
+      <div className="productAdd__right">
+        <div className="productAdd__card">
           <form onSubmit={handleSubmit}>
-            <div className="register__form-top">
-              <img className="register__img" src={image} alt="Img" />
+            <div className="productAdd__form-top">
+              <img className="productAdd__img" src={image} alt="Img" />
             </div>
 
-            <div className="register__form-content">
-              <div className="register__form-group">
+            <div className="productAdd__form-content">
+              <div className="productAdd__form-group">
                 <p>name</p>
                 <input
                   type="text"
-                  className="register__form-input"
+                  className="productAdd__form-input"
                   name="name"
                   placeholder="Name"
                   onChange={handleChange}
@@ -112,11 +112,11 @@ const ProductAdd = () => {
                 />
               </div>
 
-              <div className="register__form-group">
+              <div className="productAdd__form-group">
                 <p>description</p>
                 <input
                   type="text"
-                  className="register__form-input"
+                  className="productAdd__form-input"
                   name="description"
                   placeholder="Description"
                   onChange={handleChange}
@@ -124,11 +124,11 @@ const ProductAdd = () => {
                 />
               </div>
 
-              <div className="register__form-group">
+              <div className="productAdd__form-group">
                 <p>price</p>
                 <input
                   type="text"
-                  className="register__form-input"
+                  className="productAdd__form-input"
                   name="price"
                   placeholder="Price"
                   onChange={handleChange}
@@ -136,12 +136,12 @@ const ProductAdd = () => {
                 />
               </div>
 
-              <div className="register__form-group">
+              <div className="productAdd__form-group">
                 <p>img</p>
                 <input
                   type="file"
                   name="file"
-                  className="register__form-input product-img"
+                  className="productAdd__form-input productAdd-img"
                   id="file_product"
                   placeholder="Img"
                   onChange={handleChangeImg}
@@ -149,11 +149,11 @@ const ProductAdd = () => {
                 />
               </div>
 
-              <div className="register__form-group--display">
-                <button className="register__form-button" type="button" onClick={handleClickCancel}>
+              <div className="productAdd__form-group--display">
+                <button className="productAdd__form-button" type="button" onClick={handleClickCancel}>
                   Cancel
                 </button>
-                <button className="register__form-button" type="submit">
+                <button className="productAdd__form-button" type="submit">
                   Save
                 </button>
               </div>
