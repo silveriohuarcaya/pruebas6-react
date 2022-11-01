@@ -59,11 +59,9 @@ const Navbar = () => {
         <nav>
           <ul className="navbar__menu">
             <li>
-              <Link className="navbar__link" to="/jobs">
-                <div className="shopping-bars">
-                  <i className="fa fa-solid fa-bars" />
-                </div>
-              </Link>
+              <div className="shopping-bars">
+                <i className="fa fa-solid fa-bars" />
+              </div>
               <ul className="navbar__sub-menu">
                 <li>
                   <Link className="navbar__link" to="/jobs">
@@ -92,6 +90,37 @@ const Navbar = () => {
                 </li>
               </ul>
             </li>
+
+            {profile?.role === 'admin' ? (
+              <li>
+                <div className="navbar__link">Admin</div>
+
+                <ul className="navbar__sub-menu">
+                  <li>
+                    <Link className="navbar__link" to="/product-Admin">
+                      Products
+                    </Link>
+                  </li>
+                  <li>
+                    <Link className="navbar__link" to="/img/photos">
+                      Photos
+                    </Link>
+                  </li>
+                  <li>
+                    <Link className="navbar__link" to="/img/videos">
+                      Videos
+                    </Link>
+                  </li>
+                  <li>
+                    <Link className="navbar__link" to="/img/histories">
+                      Histories
+                    </Link>
+                  </li>
+                </ul>
+              </li>
+            ) : (
+              <p />
+            )}
             <li>
               <Link className="navbar__link" to="/product">
                 Menus
