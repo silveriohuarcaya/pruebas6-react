@@ -62,6 +62,7 @@ const Navbar = () => {
               <div className="shopping-bars">
                 <i className="fa fa-solid fa-bars" />
               </div>
+
               <ul className="navbar__sub-menu">
                 <li>
                   <Link className="navbar__link" to="/jobs">
