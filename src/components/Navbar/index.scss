@@ -16,66 +16,67 @@ $color-brand: #29aafe;
   flex-direction: column;
   background: #f8f8f800;
   width: 100%;
-  font-size: 2em;
+  height: 15%;
 
-  img {
-    border-radius: 50%;
-    width: 20vh;
-    height: 20vh;
-  }
-
-  .navbar__left {
+  .navbar__container {
     display: flex;
-    float: left;
-    letter-spacing: 0.5px;
-    padding: 5vh 0 1vh 2vh;
-  }
+    font-size: 2em;
+    flex-direction: row;
+    padding: 0.5rem;
 
-  .navbar__right {
-    display: flex;
-    align-items: center;
-    float: right;
-    letter-spacing: 0.5px;
-    padding: 5vh 2vh 1vh 0;
+    .navbar__left {
+      width: 15%;
+      display: flex;
+      align-items: center;
 
-    .navbar__link--background-color {
-      background-color: rgb(98, 177, 29);
-      color: white;
-      text-transform: capitalize;
-      &:hover,
-      &.focus {
+      img {
+        border-radius: 50%;
+        width: 70%;
+      }
+    }
+
+    .navbar__nav {
+      width: 30%;
+      display: flex;
+      letter-spacing: 0.5px;
+    }
+
+    .navbar__right {
+      width: 55%;
+      display: flex;
+      align-items: center;
+      justify-content: right;
+      letter-spacing: 0.5px;
+
+      .navbar__link--background-color {
+        background-color: rgb(98, 177, 29);
         color: white;
-        text-decoration: none;
+        text-transform: capitalize;
+        &:hover,
+        &.focus {
+          color: white;
+          text-decoration: none;
+        }
       }
-    }
-
-    .btn {
-      margin-right: 8px;
-      color: rgb(19, 77, 236);
-      opacity: 1;
-      &:hover {
-        color: rgb(155, 18, 137);
-      }
-    }
-  }
-
-  .navbar__link {
-    transition: color 0.2s linear;
-    color: white;
-    padding: 1vh;
-    &:hover,
-    &.focus {
-      color: $color-brand;
-      text-decoration: none;
     }
   }
 }
 
+.navbar__link {
+  transition: color 0.2s linear;
+  color: white;
+  padding: 1vh;
+  &:hover,
+  &.focus {
+    color: $color-brand;
+    text-decoration: none;
+  }
+}
 .navbar__menu {
   list-style: none;
   display: flex;
+  align-items: center;
   justify-content: flex-start;
-  padding: 5vh 0 0 2vh;
 }
 
 .navbar__menu--padding {
@@ -140,4 +141,25 @@ strong {
 
 .shopping-bars {
   width: 30px;
+}
+
+@media screen and (max-width: 800px) {
+  .navbar {
+    .navbar__container {
+      font-size: 1.5em;
+      .navbar__left {
+        width: 15%;
+      }
+      .navbar__nav {
+        width: 45%;
+      }
+      .navbar__right {
+        width: 40%;
+      }
+      .nick {
+        display: block;
+        text-align: center;
+      }
+    }
+  }
 }
