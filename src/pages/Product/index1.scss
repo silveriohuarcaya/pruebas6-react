@@ -1,0 +1,268 @@
+$main-color: #6394f8;
+$light-text: #abb0be;
+$color-brand: #29aafe;
+
+@import url(https://fonts.googleapis.com/css?family=Lato:300,400,700);
+
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css);
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body {
+  font: 14px/22px 'Lato', Arial, sans-serif;
+  // background: #6394f8;
+  background: black;
+  // background: #7f4814;
+}
+
+.lighter-text {
+  color: #abb0be;
+}
+
+.main-color-text {
+  font-weight: bold;
+  color: $main-color;
+}
+
+.img-logo {
+  margin: 6vh 0 0 0.5vh;
+  border-radius: 50%;
+  width: 20vh;
+  height: 20vh;
+}
+
+button {
+  background: #7f4814;
+  border-color: transparent;
+  border-radius: 60px;
+  color: white;
+  display: block;
+  font-size: 14px;
+  margin: 25px 0 15px 0;
+  padding: 7px;
+  text-align: center;
+  text-decoration: none;
+  transition: color 0.2s linear;
+
+  &:hover {
+    color: $color-brand;
+    text-decoration: none;
+  }
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  width: 95%;
+}
+
+.product-list__container {
+  display: flex;
+  justify-content: flex-end;
+  float: left;
+  letter-spacing: 0.5px;
+  padding: 4vh 0 1vh 2vh;
+  width: 78%;
+
+  .product-container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 70px;
+  }
+
+  .product-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    width: 140px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .item-name {
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    .item-price {
+      color: $main-color;
+      font-size: 16px;
+      margin-top: 10px;
+    }
+
+    button {
+      margin-top: 10px;
+    }
+  }
+}
+
+.shopping-container {
+  display: flex;
+  justify-content: flex-end;
+  float: right;
+  letter-spacing: 0.5px;
+  padding: 1vh 2vh 1vh 0;
+  width: 22%;
+}
+
+.shopping-cart {
+  margin: 20px 0;
+  background: white;
+  width: 320px;
+  position: relative;
+  border-radius: 12px;
+  padding: 10px;
+
+  .shopping-cart-header {
+    border-bottom: 2px solid #e8e8e8;
+    padding-bottom: 15px;
+
+    .cart-icon {
+      color: #515783;
+      font-size: 18px;
+      margin-right: 7px;
+      float: left;
+    }
+    .badge {
+      background-color: #172136;
+      border-radius: 10px;
+      color: white;
+      display: inline-block;
+      font-size: 12px;
+      line-height: 1;
+      padding: 3px 7px;
+      text-align: center;
+      vertical-align: middle;
+      white-space: nowrap;
+    }
+
+    .shopping-cart-total {
+      float: right;
+    }
+  }
+
+  .shopping-cart-items {
+    padding-top: 20px;
+
+    li {
+      list-style-type: none;
+      margin-bottom: 18px;
+    }
+
+    .item-name {
+      display: block;
+      padding-top: 10px;
+      font-size: 16px;
+    }
+  }
+  button {
+    width: 75px;
+    margin: 5px;
+    font-size: 12px;
+  }
+}
+
+.shopping-cart:after {
+  border-bottom-color: white;
+  border-width: 8px;
+  border: solid transparent;
+  bottom: 100%;
+  content: ' ';
+  height: 0;
+  left: 89%;
+  margin-left: -8px;
+  pointer-events: none;
+  position: absolute;
+  width: 0;
+}
+
+.clearfix:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+h1 {
+  font-size: 24px;
+  margin: 0;
+  color: white;
+}
+
+.div-delete-img {
+  display: flex;
+  height: 70%;
+
+  .div-delete {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 10%;
+
+    .cart-button {
+      font-size: 12px;
+      width: 20px;
+      height: 20px;
+      padding: 2px;
+    }
+  }
+
+  .div-img {
+    display: flex;
+    align-items: center;
+    float: left;
+    width: 25%;
+  }
+
+  .div-name {
+    width: 65%;
+    padding-left: 0em;
+  }
+}
+
+.div-price-quantity {
+  display: flex;
+  margin-top: 10px;
+
+  .item-price {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35%;
+    font-weight: bold;
+    color: $main-color;
+  }
+
+  .item-quantity {
+    display: flex;
+    align-items: center;
+    padding-left: 0em;
+    width: 65%;
+    color: $light-text;
+
+    b {
+      color: $main-color;
+    }
+
+    .cart-button-quantity {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      width: 20px;
+      height: 20px;
+      padding: 2px;
+    }
+  }
+}
+
+.shopping-cart-footer {
+  display: flex;
+  justify-content: space-around;
+}

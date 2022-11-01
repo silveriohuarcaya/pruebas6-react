@@ -14,6 +14,15 @@ const Navbar = () => {
           <Link className="navbar__link" to="/">
             <img src={logo} alt="logo" />
           </Link>
+          <Link className="navbar__link" to="/payment">
+            Payment
+          </Link>
+          <Link className="navbar__link" to="/upload">
+            UploadFiles
+          </Link>
+          <Link className="navbar__link" to="/product">
+            Products
+          </Link>
         </div>
 
         <div className="navbar__right">
@@ -29,7 +38,7 @@ const Navbar = () => {
 
                 <ul className="navbar__sub-menu">
                   <li>
-                    <Link className="navbar__link" to="/">
+                    <Link className="navbar__link" to="/signOut">
                       Account
                     </Link>
                   </li>
@@ -59,72 +68,41 @@ const Navbar = () => {
         <nav>
           <ul className="navbar__menu">
             <li>
-              <div className="shopping-bars">
-                <i className="fa fa-solid fa-bars" />
-              </div>
+              <Link className="navbar__link" to="/">
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link className="navbar__link" to="/jobs">
+                Jobs
+              </Link>
               <ul className="navbar__sub-menu">
                 <li>
                   <Link className="navbar__link" to="/jobs">
-                    Stories
+                    Browse jobs
                   </Link>
                 </li>
                 <li>
                   <Link className="navbar__link" to="/jobs/detail/1020">
-                    Photos
+                    Job detail
                   </Link>
                 </li>
                 <li>
                   <Link className="navbar__link" to="/jobs/apply/1020">
-                    Videos
+                    Apply for job
                   </Link>
                 </li>
                 <li>
                   <Link className="navbar__link" to="/jobs/create">
-                    Reservations
+                    Post a job
                   </Link>
                 </li>
                 <li>
                   <Link className="navbar__link" to="/candidates">
-                    About
+                    Candidates
                   </Link>
                 </li>
               </ul>
-            </li>
-
-            {profile?.role === 'admin' ? (
-              <li>
-                <div className="navbar__link">Admin</div>
-
-                <ul className="navbar__sub-menu">
-                  <li>
-                    <Link className="navbar__link" to="/product-Admin">
-                      Products
-                    </Link>
-                  </li>
-                  <li>
-                    <Link className="navbar__link" to="/img/photos">
-                      Photos
-                    </Link>
-                  </li>
-                  <li>
-                    <Link className="navbar__link" to="/img/videos">
-                      Videos
-                    </Link>
-                  </li>
-                  <li>
-                    <Link className="navbar__link" to="/img/histories">
-                      Histories
-                    </Link>
-                  </li>
-                </ul>
-              </li>
-            ) : (
-              <p />
-            )}
-            <li>
-              <Link className="navbar__link" to="/product">
-                Menus
-              </Link>
             </li>
           </ul>
         </nav>
