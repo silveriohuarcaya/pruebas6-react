@@ -10,6 +10,7 @@ const UploadPage = () => {
   const handleChange = (evt) => {
     setFile(evt.target.files[0]);
   };
+
   const handleUploadFile = async () => {
     const formData = new FormData();
 
@@ -36,7 +37,7 @@ const UploadPage = () => {
       <div className="uploadPage__container">
         <img className="uploadPage__img" src={logo} alt="logo" />
         <h2>Upload files</h2>
-        {/* <input type="file" name="file" id="file" onChange={handleChange} multiple /*"/> */}
+        {/* <input type="file" name="file" id="file" onChange={handleChange} multiple /*" /> */}
         <input type="file" name="file" id="file" onChange={handleChange} accept="image/*" />
         <button type="button" onClick={handleUploadFile}>
           Subir la imagen

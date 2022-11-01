@@ -1,10 +1,10 @@
 import { useEffect } from 'react';
 
-import ProductItem from './ProductItem';
+import ProductItemAdmin from './ProductItemAdmin';
 import { useAppContext } from '../../store';
 import { getProducts } from '../../services/Products';
 
-const ProductList = () => {
+const ProductListAdmin = () => {
   const { state, dispatch } = useAppContext();
 
   useEffect(() => {
@@ -23,9 +23,9 @@ const ProductList = () => {
     <div className="product-container">
       {state.products.map((product, index) => (
         // eslint-disable-next-line react/no-array-index-key
-        <ProductItem key={index} product={product} />
+        <ProductItemAdmin key={index} product={product} />
       ))}
     </div>
   );
 };
-export default ProductList;
+export default ProductListAdmin;

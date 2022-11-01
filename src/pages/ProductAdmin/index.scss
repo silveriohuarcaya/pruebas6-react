@@ -1,0 +1,176 @@
+$main-color: #6394f8;
+$light-text: #abb0be;
+$color-brand: #29aafe;
+
+@import url(https://fonts.googleapis.com/css?family=Lato:300,400,700);
+
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css);
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body {
+  font: 14px/22px 'Lato', Arial, sans-serif;
+  // background: #6394f8;
+  background: black;
+  // background: #7f4814;
+}
+
+.lighter-text {
+  color: #abb0be;
+}
+
+.main-color-text {
+  font-weight: bold;
+  color: $main-color;
+}
+
+.img-logo {
+  margin: 5vh 0 1.5vh 0.5vh;
+  border-radius: 50%;
+  width: 20vh;
+  height: 20vh;
+}
+
+button {
+  background: #7f4814;
+  border-color: transparent;
+  border-radius: 60px;
+  color: white;
+  display: block;
+  font-size: 14px;
+  margin: 25px 0 15px 0;
+  padding: 7px;
+  text-align: center;
+  text-decoration: none;
+  transition: color 0.2s linear;
+
+  &:hover {
+    color: $color-brand;
+    text-decoration: none;
+  }
+}
+
+.productAdmin__container {
+  display: flex;
+  flex-direction: row;
+  padding: 10px 30px;
+  width: 100%;
+}
+
+.productAdmin-list {
+  display: flex;
+  flex-direction: column;
+  width: 87%;
+}
+
+.productAdmin-login__left {
+  display: flex;
+
+  .div-title {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 35px;
+  }
+}
+
+.productAdmin-list__container {
+  display: flex;
+  justify-content: flex-end;
+  float: left;
+  letter-spacing: 0.5px;
+  padding: 2vh 2vh 1vh 10vh;
+
+  .product-container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 70px;
+  }
+
+  .productAdmin-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    padding: 7px;
+    width: 160px;
+    height: 270px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .productAdmin-img__Product {
+      height: 60%;
+
+      .productAdmin-img {
+        border-radius: 40%;
+        width: 140px;
+        height: 140px;
+      }
+    }
+
+    .productAdmin__item {
+      height: 30%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .productAdmin-item-name {
+        height: 70%;
+        text-align: center;
+        font-size: 12px;
+        font-weight: bold;
+      }
+      .productAdmin-item-price {
+        height: 30%;
+        color: $main-color;
+        font-size: 16px;
+        margin: 5px 0;
+      }
+    }
+
+    .productAdmin__button {
+      display: flex;
+      width: 100%;
+      height: 10%;
+      font-size: 10px;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-around;
+      margin-top: 5px;
+
+      .admin__button {
+        margin: 0;
+        width: 60px;
+        height: 25px;
+        padding: 3px;
+      }
+    }
+  }
+}
+
+.productAdmin-shopping-container {
+  display: flex;
+  flex-direction: column;
+  float: right;
+  letter-spacing: 0.5px;
+  width: 13%;
+
+  .button__add {
+    font-size: 18px;
+    height: 70px;
+  }
+}
+
+// h1 {
+//   font-size: 24px;
+//   margin: 0;
+//   color: white;
+// }

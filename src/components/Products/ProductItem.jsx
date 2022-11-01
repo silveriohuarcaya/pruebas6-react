@@ -14,12 +14,22 @@ const ProductItem = ({ product }) => {
 
   return (
     <div className="product-card">
-      <img className="img__Product" src={img} alt={`product ${name}`} width="70" height="70" />
-      <p className="item-name">{name}</p>
-      <p className="item-price">${price}</p>
-      <button type="button" onClick={handleClick}>
-        Add to cart
-      </button>
+      <div className="product-img__Product">
+        <img className="img__Product" src={img} alt={`product ${name}`} />
+      </div>
+      <div className="product__item">
+        <div className="product-item-name">
+          <p>{name}</p>
+        </div>
+        <div className="product-item-price">
+          <p>${price}</p>
+        </div>
+      </div>
+      <div className="product__button">
+        <button type="button" className="user__button" onClick={handleClick}>
+          Add to cart
+        </button>
+      </div>
     </div>
   );
 };

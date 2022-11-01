@@ -1,0 +1,140 @@
+$color-brand: #29aafe;
+
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css);
+
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.register__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: black;
+  height: 100vh;
+  width: 100%;
+
+  .register__left {
+    width: 50%;
+    height: 100%;
+  }
+
+  .register__right {
+    display: flex;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+  }
+
+  img {
+    margin: 6vh 0 0 8vh;
+    border-radius: 50%;
+    width: 20vh;
+    height: 20vh;
+  }
+}
+
+.register__card {
+  border-radius: 3vh;
+  box-shadow: 0.2rem 1rem 1rem rgba(0, 0, 0, 0.3);
+  width: 50vh;
+  height: 70vh;
+  background-color: rgb(212, 28, 120);
+  color: var(--white-text);
+}
+
+.register__form-top {
+  padding: 2vh;
+  font-size: 8vh;
+  display: flex;
+  justify-content: center;
+
+  .register__img {
+    margin: 0;
+  }
+}
+
+.register__form-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 50vh;
+  height: 40vh;
+
+  p {
+    font-size: 2vh;
+  }
+  span {
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
+    transition: color 0.2s linear;
+    color: $color-brand;
+    font-weight: bold;
+  }
+}
+
+.register__form-group {
+  display: flex;
+  flex-direction: column;
+  width: 40vh;
+  height: 30vh;
+}
+
+.register__form-group--display {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+  width: 40vh;
+}
+
+.register__form-input {
+  border: none;
+  border-radius: 2vh;
+  color: rgb(97, 94, 94);
+  font-size: 2vh;
+  margin-top: 0.4vh;
+  margin-bottom: 0.6vh;
+  padding: 0.9vh;
+  width: 40vh;
+  height: 4vh;
+}
+
+.product-img {
+  height: 6vh;
+  padding: 5px;
+  background-color: white;
+}
+
+.register__form-button {
+  padding: 0.9vh;
+  background-color: rgba(40, 151, 51);
+  margin: 2vh 0 0 0;
+  border: 0vh;
+  border-radius: 2vh;
+  width: 15vh;
+  height: 5vh;
+  font-size: 2.5vh;
+}
+
+/* media queries */
+@media (min-width: 1030px) {
+  .register {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(41, 153, 170);
+    height: 100vh;
+    width: 100%;
+  }
+}
