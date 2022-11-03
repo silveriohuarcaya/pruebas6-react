@@ -30,7 +30,7 @@ const ItemCart = (props) => {
   };
 
   return (
-    <li className="clearfix">
+    <li className="itemCart">
       <div className="div-delete-img">
         <div className="div-delete">
           <button className="cart-button" type="button" onClick={handleClickDelete}>
@@ -38,7 +38,7 @@ const ItemCart = (props) => {
           </button>
         </div>
         <div className="div-img">
-          <img src={img} alt={`product ${name}`} width="40" height="40" />
+          <img src={img} alt={`product ${name}`} />
         </div>
         <div className="div-name">
           <span className="item-name">{name}</span>
