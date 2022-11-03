@@ -9,11 +9,13 @@ import './index.scss';
 const Product = () => (
   <div className="container">
     <div className="product-list">
-      <div className="login__left">
-        <Link className="login__link" to="/">
-          <img className="img-logo" src={logo} alt="logo" />
-        </Link>
-        <div className="div-title">Products</div>
+      <div className="product__left">
+        <div className="product__logo">
+          <Link className="login__link" to="/">
+            <img className="img-logo" src={logo} alt="logo" />
+          </Link>
+        </div>
+        <div className="product__title">Products</div>
       </div>
       <div className="product-list__container">
         <ProductList />
