@@ -11,9 +11,11 @@ const Navbar = () => {
     <nav className="navbar">
       <div className="navbar__container">
         <div className="navbar__left">
-          <Link className="navbar__link" to="/">
-            <img src={logo} alt="logo" />
-          </Link>
+          <div className="navbar-logo">
+            <Link className="navbar__link" to="/">
+              <img className="img-logo" src={logo} alt="logo" />
+            </Link>
+          </div>
         </div>
 
         <nav className="navbar__nav">

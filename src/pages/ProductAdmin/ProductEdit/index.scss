@@ -16,112 +16,149 @@ body {
 
 .productEdit__container {
   display: flex;
-  align-items: center;
-  justify-content: center;
   background: black;
   height: 100vh;
   width: 100%;
 
   .productEdit__left {
-    width: 50%;
-    height: 100%;
+    width: 30%;
+
+    img {
+      margin: 6vh 0 0 8vh;
+      border-radius: 50%;
+      width: 20vh;
+      height: 20vh;
+    }
   }
 
   .productEdit__right {
     display: flex;
     align-items: center;
-    width: 50%;
-    height: 100%;
-  }
-
-  img {
-    margin: 6vh 0 0 8vh;
-    border-radius: 50%;
-    width: 20vh;
-    height: 20vh;
-  }
-}
-
-.productEdit__card {
-  border-radius: 3vh;
-  box-shadow: 0.2rem 1rem 1rem rgba(0, 0, 0, 0.3);
-  width: 50vh;
-  height: 70vh;
-  background-color: rgb(212, 28, 120);
-  color: var(--white-text);
-}
-
-.productEdit__form-top {
-  padding: 2vh;
-  font-size: 8vh;
-  display: flex;
-  justify-content: center;
-
-  .productEdit__img {
-    margin: 0;
-  }
-}
-
-.productEdit__form-content {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  width: 50vh;
-  height: 40vh;
-
-  p {
-    font-size: 2vh;
-  }
-  span {
-    font-size: 15px;
-    display: flex;
     justify-content: center;
-    transition: color 0.2s linear;
-    color: $color-brand;
-    font-weight: bold;
+    width: 80%;
+
+    .productEdit__card {
+      border-radius: 2rem;
+      box-shadow: 0.2rem 1rem 1rem rgba(0, 0, 0, 0.3);
+      width: 18rem;
+      background-color: rgb(212, 28, 120);
+      color: var(--white-text);
+
+      .productEdit__form-top {
+        padding: 2vh;
+        display: flex;
+        justify-content: center;
+
+        .productEdit__img {
+          border-radius: 50%;
+          width: 120px;
+          height: 120px;
+          margin: 0;
+        }
+      }
+
+      .productEdit__form-content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding: 1rem;
+        height: 18rem;
+
+        .productEdit__form-group {
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+          height: 3.5rem;
+
+          .productEdit__form-input {
+            border: none;
+            border-radius: 2rem;
+            color: rgb(97, 94, 94);
+            font-size: 0.7rem;
+            margin-top: 0.2rem;
+            margin-bottom: 0.6rem;
+            padding: 0.7rem;
+            width: 100%;
+            height: 2rem;
+          }
+
+          .productEdit-img {
+            margin: 0;
+            height: 3.5rem;
+            padding: 5px;
+            background-color: white;
+          }
+
+          p {
+            font-size: 0.6rem;
+          }
+        }
+
+        .productEdit__form-group--display {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-evenly;
+          width: 100%;
+
+          .productEdit__form-button {
+            padding: 0.1rem;
+            background-color: rgba(40, 151, 51);
+            margin: 1rem 0 0 0;
+            border: 0vh;
+            border-radius: 2rem;
+            width: 5rem;
+            height: 2rem;
+            font-size: 0.8rem;
+          }
+        }
+      }
+    }
   }
 }
 
-.productEdit__form-group {
-  display: flex;
-  flex-direction: column;
-  width: 40vh;
-  height: 30vh;
-}
+@media (max-width: 768px) {
+  .productEdit__container {
+    display: flex;
+    flex-direction: column;
 
-.productEdit__form-group--display {
-  display: flex;
-  justify-content: space-evenly;
-  flex-direction: row;
-  width: 40vh;
-}
+    .productEdit__left {
+      padding: 1rem;
+      height: 10%;
+      width: 100%;
 
-.productEdit__form-input {
-  border: none;
-  border-radius: 2vh;
-  color: rgb(97, 94, 94);
-  font-size: 2vh;
-  margin-top: 0.4vh;
-  margin-bottom: 0.6vh;
-  padding: 0.9vh;
-  width: 40vh;
-  height: 4vh;
-}
+      img {
+        margin: 0;
+        width: 5vh;
+        height: 5vh;
+      }
+    }
 
-.productEdit-img {
-  height: 6vh;
-  padding: 5px;
-  background-color: white;
-}
+    .productEdit__right {
+      align-items: flex-start;
+      padding-top: 0;
+      width: 100%;
+      height: 90%;
 
-.productEdit__form-button {
-  padding: 0.9vh;
-  background-color: rgba(40, 151, 51);
-  margin: 2vh 0 0 0;
-  border: 0vh;
-  border-radius: 2vh;
-  width: 15vh;
-  height: 5vh;
-  font-size: 2.5vh;
+      .productEdit__card {
+        width: 16rem;
+
+        .productEdit__form-top {
+          padding: 2vh;
+          display: flex;
+          justify-content: center;
+
+          .productEdit__img {
+            width: 100px;
+            height: 100px;
+          }
+        }
+
+        .productEdit__form-content {
+          width: 16rem;
+        }
+      }
+    }
+  }
 }

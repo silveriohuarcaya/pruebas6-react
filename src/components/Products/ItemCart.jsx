@@ -46,7 +46,7 @@ const ItemCart = (props) => {
       </div>
       <div className="div-price-quantity">
         <div className="item-price">
-          <span>${Intl.NumberFormat('en-US').format(price * quantity)}</span>
+          <span>$ {Intl.NumberFormat('en-US').format(price * quantity)}</span>
         </div>
         <div className="item-quantity">
           <span>
