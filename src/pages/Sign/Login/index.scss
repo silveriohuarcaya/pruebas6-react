@@ -152,7 +152,12 @@ body {
     .login__left {
       width: 20%;
       padding: 0em;
+
+      img {
+        width: 100%;
+      }
     }
+
     .login__right {
       padding-top: 4em;
       align-items: flex-start;
