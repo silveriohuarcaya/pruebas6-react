@@ -116,20 +116,20 @@ body {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 640px) {
   .productAdd__container {
     display: flex;
     flex-direction: column;
 
     .productAdd__left {
-      padding: 1rem;
-      height: 10%;
+      margin: 1rem 0 0 1rem;
+      height: 13%;
       width: 100%;
 
       img {
         margin: 0;
-        width: 25%;
-        height: 25%;
+        width: 50px;
+        height: 50px;
       }
     }
 
@@ -137,7 +137,7 @@ body {
       align-items: flex-start;
       padding-top: 0;
       width: 100%;
-      height: 90%;
+      height: 87%;
 
       .productAdd__card {
         width: 16rem;
