@@ -11,7 +11,7 @@ const Product = () => (
     <div className="product-list">
       <div className="product__left">
         <div className="product__logo">
-          <Link className="login__link" to="/">
+          <Link className="product__link" to="/">
             <img className="img-logo" src={logo} alt="logo" />
           </Link>
         </div>
