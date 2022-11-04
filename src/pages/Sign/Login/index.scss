@@ -27,12 +27,13 @@ body {
   background-size: cover;
 
   .login__left {
+    padding: 2em 2em;
     width: 30%;
     height: 100%;
 
     img {
       border-radius: 50%;
-      width: 50%;
+      width: 70%;
     }
   }
 
@@ -143,5 +144,20 @@ body {
     justify-content: center;
     align-items: center;
     height: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .login__container {
+    padding-top: 2em;
+    .login__left {
+      width: 20%;
+      padding: 0em;
+    }
+    .login__right {
+      padding-top: 4em;
+      align-items: flex-start;
+      width: 80%;
+    }
   }
 }

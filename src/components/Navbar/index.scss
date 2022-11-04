@@ -18,22 +18,32 @@ $color-button: #7f4814;
   .navbar__container {
     width: 100%;
     margin: auto;
-
+    font-size: 16px;
+    line-height: 1.5;
     display: flex;
-    font-size: 1em;
     padding: 0.5rem;
 
     .navbar__left {
-      width: 15%;
+      width: 10%;
 
-      img {
-        border-radius: 50%;
-        width: 90%;
+      .navbar-logo {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .navbar__link {
+          .img-logo {
+            border-radius: 50%;
+            height: 90px;
+            width: 90px;
+          }
+        }
       }
     }
 
     .navbar__nav {
-      width: 30%;
+      width: 35%;
       display: flex;
       justify-content: left;
       letter-spacing: 0.5px;
@@ -141,5 +151,27 @@ a {
   &:hover,
   &.focus {
     color: $color-brand;
+  }
+}
+
+@media (max-width: 640px) {
+  .navbar {
+    .navbar__container {
+      font-size: 8px;
+      line-height: 1.5;
+      .navbar__left {
+        // width: 10%;
+        .navbar-logo {
+          .navbar__link {
+            .img-logo {
+              height: 30px;
+              width: 30px;
+            }
+          }
+        }
+      }
+      .navbar__right {
+      }
+    }
   }
 }

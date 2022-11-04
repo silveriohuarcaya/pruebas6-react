@@ -1,7 +1,9 @@
 import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
 import swal from 'sweetalert';
+import { Link } from 'react-router-dom';
 import { useAppContext } from '../../store';
 import { sendEmail } from '../../services/auth';
+import logo from '../../img/fondo.jpg';
 
 import './index.scss';
 
@@ -74,32 +76,39 @@ const CheckoutForm = () => {
   };
 
   return (
-    <div>
-      <ul className="payment-cart-items">
-        <h1>SHOOPING</h1>
-        {state.cart.map((item) => (
-          <li className="clear">
-            <p className="payment-right">
-              ${Intl.NumberFormat('en-US', { minimumFractionDigits: 2 }).format(item.price * item.quantity)}
-            </p>
-            <p className="item-name">{item.name}</p>
-            <p className="item-price">
-              ${item.price} x <b>{item.quantity}</b>{' '}
-            </p>
-          </li>
-        ))}
-        <span className="payment-right-total">Total: $ {Intl.NumberFormat('en-US').format(state.total)}</span>
-      </ul>
+    <div className="payment">
+      <div className="payment__logo">
+        <Link className="register__link" to="/product">
+          <img src={logo} alt="logo" />
+        </Link>
+      </div>
+      <div className="payment__container">
+        <ul className="payment-cart-items">
+          <h1>SHOOPING</h1>
+          {state.cart.map((item) => (
+            <li className="clear">
+              <p className="payment-right">
+                ${Intl.NumberFormat('en-US', { minimumFractionDigits: 2 }).format(item.price * item.quantity)}
+              </p>
+              <p className="item-name">{item.name}</p>
+              <p className="item-price">
+                ${item.price} x <b>{item.quantity}</b>{' '}
+              </p>
+            </li>
+          ))}
+          <span className="payment-right-total">Total: $ {Intl.NumberFormat('en-US').format(state.total)}</span>
+        </ul>
 
-      <form className="Checkout__form" onSubmit={handleSubmit}>
-        <div className="cardElement">
-          <CardElement />
-        </div>
-        <br />
-        <div className="cardElement-button">
-          <button type="submit">Submit</button>
-        </div>
-      </form>
+        <form className="Checkout__form" onSubmit={handleSubmit}>
+          <div className="cardElement">
+            <CardElement />
+          </div>
+          <br />
+          <div className="cardElement-button">
+            <button type="submit">Submit</button>
+          </div>
+        </form>
+      </div>
     </div>
   );
 };

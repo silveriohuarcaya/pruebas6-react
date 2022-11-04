@@ -15,10 +15,12 @@ const ProductAdmin = () => {
     <div className="productAdmin__container">
       <div className="productAdmin-list">
         <div className="productAdmin-login__left">
-          <Link className="login__link" to="/">
-            <img className="img-logo" src={logo} alt="logo" />
-          </Link>
-          <div className="div-title">Admin Products</div>
+          <div className="productAdmin__logo">
+            <Link className="productAdmin__link" to="/">
+              <img className="img-logo" src={logo} alt="logo" />
+            </Link>
+          </div>
+          <div className="product-title">Admin Products</div>
         </div>
         <div className="productAdmin-list__container">
           <ProductListAdmin />

@@ -29,10 +29,11 @@ body {
   .register__left {
     width: 30%;
     height: 100%;
+    padding: 2em 2em;
 
     img {
       border-radius: 50%;
-      width: 50%;
+      width: 70%;
     }
   }
 
@@ -46,7 +47,7 @@ body {
     .register__card {
       border-radius: 2rem;
       box-shadow: 0.2rem 1rem 1rem rgba(0, 0, 0, 0.3);
-      width: 16rem;
+      width: 20rem;
       background-color: rgb(212, 28, 120);
       color: var(--white-text);
     }
@@ -78,7 +79,7 @@ body {
   justify-content: center;
   flex-direction: column;
   padding: 1rem;
-  width: 16rem;
+  width: 20rem;
   height: 20rem;
 
   .register__form-group {
@@ -142,5 +143,27 @@ body {
     justify-content: center;
     align-items: center;
     height: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .register__container {
+    padding-top: 2em;
+
+    .register__left {
+      padding: 0;
+      width: 20%;
+    }
+    .register__right {
+      padding-top: 3em;
+      align-items: flex-start;
+      width: 80%;
+      .register__card {
+        width: 16rem;
+      }
+    }
+  }
+  .register__form-content {
+    width: 16rem;
   }
 }
