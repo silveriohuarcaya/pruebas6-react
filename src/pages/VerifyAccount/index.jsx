@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 
 import { verify } from '../../services/auth';
-import jobs from '../../img/jobs.png';
+import logo from '../../img/fondo.jpg';
 
 import './index.scss';
 
@@ -39,7 +39,7 @@ const VerifyAccount = () => {
   return (
     <div className="verifyaccount">
       <div className="verifyaccount__container">
-        <img className="verifyaccount__img" src={jobs} alt="jobs" />
+        <img className="verifyaccount__img" src={logo} alt="jobs" />
         <h1 className="verifyaccount__h1">Active your account</h1>
         {/* <button className="verifyaccount__button" type="button" onClick={handleActivate}>
           Active
