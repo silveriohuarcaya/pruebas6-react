@@ -12,8 +12,6 @@ $color-brand: #29aafe;
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
-  position: relative;
-  min-height: 100vh;
 }
 
 .register__container {
@@ -33,7 +31,7 @@ body {
 
     img {
       border-radius: 50%;
-      width: 70%;
+      width: 60%;
     }
   }
 
@@ -47,105 +45,113 @@ body {
     .register__card {
       border-radius: 2rem;
       box-shadow: 0.2rem 1rem 1rem rgba(0, 0, 0, 0.3);
-      width: 20rem;
+      width: 18rem;
+      height: 27rem;
       background-color: rgb(212, 28, 120);
       color: var(--white-text);
+
+      form {
+        width: 100%;
+        height: 100%;
+        .register__form-top {
+          padding: 2vh;
+          font-size: 3.5rem;
+          display: flex;
+          justify-content: center;
+        }
+
+        .register__form-title {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          font-size: 1.5rem;
+          margin-bottom: 0.3em;
+
+          h1 {
+            font-size: 1.5rem;
+          }
+        }
+
+        .register__form-content {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+          width: 18rem;
+          height: 16.5rem;
+
+          .register__form-group {
+            display: flex;
+            flex-direction: column;
+            width: 14rem;
+            height: 5rem;
+
+            .register__form-input {
+              border: none;
+              border-radius: 1.5rem;
+              color: rgb(97, 94, 94);
+              font-size: 0.85rem;
+              margin-top: 0.13rem;
+              margin-bottom: 0.2rem;
+              padding: 0.3rem 0.7rem;
+              width: 14rem;
+              height: 1.7rem;
+            }
+          }
+          .register__form-button {
+            padding: 0.3rem;
+            background-color: #7f4814;
+            margin: 1rem 0 0 0;
+            border: 0vh;
+            border-radius: 2rem;
+            width: 6rem;
+            height: 1.7rem;
+            font-size: 0.9rem;
+            transition: color 0.2s linear;
+
+            &:hover {
+              color: $color-brand;
+              text-decoration: none;
+            }
+          }
+          p {
+            font-size: 0.7rem;
+          }
+          span {
+            font-size: 15px;
+            display: flex;
+            justify-content: center;
+            transition: color 0.2s linear;
+            color: $color-brand;
+            font-weight: bold;
+          }
+        }
+
+        .register__networks {
+          display: flex;
+          align-items: center;
+          justify-content: space-around;
+          margin-top: 1rem;
+          font-size: 1rem;
+
+          .fa-facebook:before {
+            color: white;
+          }
+
+          .fa-google:before {
+            color: white;
+          }
+
+          .fa-instagram:before {
+            color: white;
+          }
+        }
+      }
     }
-  }
-}
-
-.register__form-top {
-  padding: 2vh;
-  font-size: 4rem;
-  display: flex;
-  justify-content: center;
-}
-
-.register__form-title {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-size: 1.5rem;
-  margin-bottom: 0.2em;
-
-  h1 {
-    font-size: 1.5rem;
-  }
-}
-
-.register__form-content {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  padding: 1rem;
-  width: 20rem;
-  height: 20rem;
-
-  .register__form-group {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 3.5rem;
-
-    .register__form-input {
-      border: none;
-      border-radius: 2rem;
-      color: rgb(97, 94, 94);
-      font-size: 1rem;
-      margin-top: 0.2rem;
-      margin-bottom: 0.6rem;
-      padding: 0.7rem;
-      width: 100%;
-      height: 2rem;
-    }
-    p {
-      font-size: 0.8rem;
-    }
-  }
-}
-
-.register__form-button {
-  padding: 0.2rem;
-  background-color: #7f4814;
-  margin: 1.5rem 0 0 0;
-  border: 0vh;
-  border-radius: 2rem;
-  width: 7rem;
-  height: 2rem;
-  font-size: 1rem;
-}
-
-.register__networks {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  margin-bottom: 1rem;
-  font-size: 1rem;
-
-  .fa-facebook:before {
-    color: white;
-  }
-
-  .fa-google:before {
-    color: white;
-  }
-
-  .fa-instagram:before {
-    color: white;
   }
 }
 
 /* media queries */
-@media (min-width: 1030px) {
-  .register {
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    height: auto;
-  }
-}
-
 @media (max-width: 768px) {
   .register__container {
     padding-top: 2em;
@@ -159,12 +165,10 @@ body {
       }
     }
     .register__right {
+      padding-right: 2rem;
       padding-top: 3em;
       align-items: flex-start;
       width: 80%;
-      .register__card {
-        width: 16rem;
-      }
     }
   }
   .register__form-content {

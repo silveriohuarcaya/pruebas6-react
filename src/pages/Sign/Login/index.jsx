@@ -85,7 +85,7 @@ const Login = () => {
               </button>
             </div>
 
-            <div className="login__networks">
+            {/* <div className="login__networks">
               <Link to="/">
                 <i className="fa fa-facebook" aria-hidden="true" />
               </Link>
@@ -95,7 +95,7 @@ const Login = () => {
               <Link to="/">
                 <i className="fa fa-instagram" aria-hidden="true" />
               </Link>
-            </div>
+            </div> */}
           </form>
         </div>
       </div>
