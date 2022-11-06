@@ -18,11 +18,13 @@ body {
   width: 100%;
   height: 100vh;
   display: flex;
+  flex-direction: column;
   background: black;
   padding: 2em 2em 1em 2em;
 
   .productEdit__left {
-    width: 30%;
+    width: 100%;
+    height: 20%;
 
     .productEdit__link {
       padding: 0;
