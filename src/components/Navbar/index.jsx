@@ -101,6 +101,10 @@ const Navbar = () => {
                     {profile.firstName}
                     {` ${profile.lastName}`}
                   </span>
+                  <span className="nick-charAt">
+                    {profile.firstName.charAt(0).toUpperCase()}
+                    {`.${profile.lastName.charAt(0).toUpperCase()}`}
+                  </span>
                 </div>
 
                 <ul className="navbar__sub-menu">

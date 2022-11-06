@@ -33,13 +33,14 @@ const VerifyAccount = () => {
       }
       navigate('/');
     };
-    verifyAccount();
+    setTimeout(verifyAccount, 2000);
   }, []);
 
   return (
     <div className="verifyaccount">
       <div className="verifyaccount__container">
         <img className="verifyaccount__img" src={logo} alt="jobs" />
+        <h3>Thank you</h3>
         <h1 className="verifyaccount__h1">Active your account</h1>
         {/* <button className="verifyaccount__button" type="button" onClick={handleActivate}>
           Active

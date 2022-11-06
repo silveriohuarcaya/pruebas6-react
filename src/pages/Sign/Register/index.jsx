@@ -8,6 +8,7 @@ import { register } from '../../../services/auth';
 const Register = () => {
   const navigate = useNavigate();
   const [registerError, setRegisterError] = useState(false);
+  const [activeRegister, setActiveRegister] = useState(false);
   const [form, setForm] = useState({});
 
   const handleChange = (e) => {
@@ -18,9 +19,17 @@ const Register = () => {
     e.preventDefault();
     try {
       const response = await register(form);
+
+      if (response.error?.name === 'ValidationError') {
+        setActiveRegister(true);
+        setRegisterError(false);
+      }
+
       if (response.error?.keyPattern.email === 1) {
+        setActiveRegister(false);
         setRegisterError(true);
-      } else {
+      }
+      if (!response.error) {
         const { token, profile } = response;
         localStorage.setItem('token', token);
         localStorage.setItem('profile', JSON.stringify(profile));
@@ -96,13 +105,14 @@ const Register = () => {
                   required
                 />
                 {registerError ? <span>This email is registered</span> : <p> </p>}
+                {activeRegister ? <span>Password min 6 characters</span> : <p> </p>}
               </div>
 
               <button className="register__form-button" type="submit">
                 Register
               </button>
             </div>
-            <div className="register__networks">
+            {/* <div className="register__networks">
               <Link to="/">
                 <i className="fa fa-facebook" aria-hidden="true" />
               </Link>
@@ -112,7 +122,7 @@ const Register = () => {
               <Link to="/">
                 <i className="fa fa-instagram" aria-hidden="true" />
               </Link>
-            </div>
+            </div> */}
           </form>
         </div>
       </div>
