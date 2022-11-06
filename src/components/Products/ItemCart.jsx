@@ -46,6 +46,7 @@ const ItemCart = (props) => {
       </div>
       <div className="div-price-quantity">
         <div className="item-price">
+          {/* Intl.NumberFormat('en-US').format(state.total) * 100, */}
           <span>$ {Intl.NumberFormat('en-US').format(price * quantity)}</span>
         </div>
         <div className="item-quantity">

@@ -24,7 +24,7 @@ $color-button: #7f4814;
     padding: 0.5rem;
 
     .navbar__left {
-      width: 10%;
+      width: 15%;
 
       .navbar-logo {
         width: 100%;
@@ -43,7 +43,7 @@ $color-button: #7f4814;
     }
 
     .navbar__nav {
-      width: 35%;
+      width: 30%;
       display: flex;
       justify-content: left;
       letter-spacing: 0.5px;
@@ -66,6 +66,9 @@ $color-button: #7f4814;
       .nick {
         display: block;
         text-align: center;
+      }
+      .nick-charAt {
+        display: none;
       }
     }
   }
@@ -154,13 +157,12 @@ a {
   }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
   .navbar {
     .navbar__container {
-      font-size: 8px;
+      font-size: 10px;
       line-height: 1.5;
       .navbar__left {
-        // width: 10%;
         .navbar-logo {
           .navbar__link {
             .img-logo {
@@ -171,6 +173,16 @@ a {
         }
       }
       .navbar__right {
+        .navbar__link--background-color {
+          border-radius: 40%;
+        }
+        .nick {
+          display: none;
+        }
+        .nick-charAt {
+          font-size: 16px;
+          display: block;
+        }
       }
     }
   }
