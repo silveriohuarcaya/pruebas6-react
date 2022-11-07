@@ -36,7 +36,7 @@ const ProductEdit = () => {
       const formData = new FormData();
 
       formData.append('file', file);
-      formData.append('filename', file.name);
+      // formData.append('filename', file.name);
 
       const payload = {
         method: 'POST',
@@ -44,8 +44,10 @@ const ProductEdit = () => {
       };
 
       try {
+        console.log('huarcaya front 1:', file);
         const response = await fetch('http://localhost:8080/api/upload/file', payload);
         const data = await response.json();
+        console.log('wilfredo front 3', data);
         setImage(data.url);
 
         const formObject = {
