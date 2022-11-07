@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import axios from 'axios';
 import { useAppContext } from '../../../store';
 import { getProducts, updateProduct } from '../../../services/Products';
 
@@ -38,21 +39,22 @@ const ProductEdit = () => {
       formData.append('file', file);
       // formData.append('filename', file.name);
 
-      const payload = {
-        method: 'POST',
-        body: formData,
-      };
+      // const payload = {
+      //   method: 'POST',
+      //   body: formData,
+      // };
 
       try {
         console.log('huarcaya front 1:', file);
-        const response = await fetch('http://localhost:8080/api/upload/file', payload);
-        const data = await response.json();
-        console.log('wilfredo front 3', data);
-        setImage(data.url);
+        // const response = await fetch('http://localhost:8080/api/upload/file', payload);
+        // const data = await response.json();
+        const response = await axios.post('http://localhost:8080/api/upload/file', formData);
+        console.log('wilfredo front 3', response.data.url);
+        setImage(response.data.url);
 
         const formObject = {
           ...form,
-          img: data.url,
+          img: response.data.url,
           id: _id,
         };
 
