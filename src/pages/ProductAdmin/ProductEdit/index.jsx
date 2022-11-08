@@ -25,29 +25,29 @@ const ProductEdit = () => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleChangeImg = (e) => {
-    setFile(e.target.files[0]);
-    const urlImage = URL.createObjectURL(e.target.files[0]);
+  const handleChangeImg = (evt) => {
+    setFile(evt.target.files[0]);
+    const urlImage = URL.createObjectURL(evt.target.files[0]);
     setImage(urlImage);
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const handleUploadFile = async () => {
     if (file) {
       const formData = new FormData();
 
       formData.append('file', file);
-      // formData.append('filename', file.name);
+      formData.append('filename', file.name);
 
       const payload = {
         method: 'POST',
         body: formData,
       };
 
+      console.log('huarcaya front 1:', file);
       try {
-        // console.log('huarcaya front 1:', file);
         const response = await fetch('http://localhost:8080/api/upload/file', payload);
         const data = await response.json();
+        console.log('callañaupa-data', data);
 
         // const response = await axios.post('http://localhost:8080/api/upload/file', formData);
 
@@ -105,7 +105,7 @@ const ProductEdit = () => {
 
       <div className="productEdit__right">
         <div className="productEdit__card">
-          <form onSubmit={handleSubmit}>
+          <form>
             <div className="productEdit__form-top">
               <img className="productEdit__img" src={image} alt="Img" />
             </div>
@@ -156,7 +156,7 @@ const ProductEdit = () => {
                   type="file"
                   name="file"
                   className="productEdit__form-input productEdit-img"
-                  id="file_product"
+                  id="file"
                   placeholder="Img"
                   onChange={handleChangeImg}
                   accept="image/*"
@@ -167,7 +167,7 @@ const ProductEdit = () => {
                 <button className="productEdit__form-button" type="button" onClick={handleClickCancel}>
                   Cancel
                 </button>
-                <button className="productEdit__form-button" type="submit">
+                <button className="productEdit__form-button" type="button" onClick={handleUploadFile}>
                   Save
                 </button>
               </div>
