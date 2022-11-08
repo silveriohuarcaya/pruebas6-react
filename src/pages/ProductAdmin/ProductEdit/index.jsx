@@ -39,10 +39,10 @@ const ProductEdit = () => {
       formData.append('file', file);
       // formData.append('filename', file.name);
 
-      const payload = {
-        method: 'POST',
-        body: formData,
-      };
+      // const payload = {
+      //   method: 'POST',
+      //   body: formData,
+      // };
 
       try {
         console.log('huarcaya front 1:', file);
@@ -56,7 +56,7 @@ const ProductEdit = () => {
 
         const formObject = {
           ...form,
-          img: data.url,
+          img: response.data.url,
           id: _id,
         };
 
