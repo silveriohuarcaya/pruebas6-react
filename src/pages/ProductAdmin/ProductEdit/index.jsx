@@ -45,7 +45,7 @@ const ProductEdit = () => {
       // };
 
       try {
-        console.log('huarcaya front 1:', file);
+        // console.log('huarcaya front 1:', file);
         const response = await fetch('http://localhost:8080/api/upload/file', payload);
         const data = await response.json();
 
