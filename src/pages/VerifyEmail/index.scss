@@ -79,7 +79,6 @@ body {
   transition: color 0.3s linear;
 
   &:hover {
-    // background-color: #1f6809;
     color: $color-brand;
   }
 }
@@ -95,10 +94,6 @@ body {
       h3 {
         margin: 1rem;
         font-size: 0.9rem;
-      }
-      .h2--color {
-      }
-      .verifyEmail__button {
       }
     }
   }
