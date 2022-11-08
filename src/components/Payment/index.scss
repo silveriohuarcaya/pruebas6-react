@@ -1,4 +1,6 @@
 $main-color: #6394f8;
+$color-brand: #29aafe;
+$color-darkMagenta: #570657;
 
 .payment-header {
   width: 100%;
@@ -36,7 +38,7 @@ $main-color: #6394f8;
       align-items: center;
 
       .payment-cart-items {
-        background: #7f4814;
+        background: $color-darkMagenta;
         width: 28rem;
         border-radius: 20px;
         padding: 20px 60px;
@@ -87,9 +89,24 @@ $main-color: #6394f8;
           justify-content: center;
 
           button {
-            width: 95px;
-            margin: 5px;
-            font-size: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.3rem;
+            background-color: $color-darkMagenta;
+            margin: 1rem 0 0 0;
+            border: 0.2rem solid white;
+            border-radius: 2rem;
+            width: 6rem;
+            height: 2rem;
+            font-size: 0.9rem;
+            color: white;
+            transition: color 0.2s linear;
+            &:hover {
+              cursor: pointer;
+              background-color: #3a0b3a;
+              color: $color-brand;
+            }
           }
         }
       }
