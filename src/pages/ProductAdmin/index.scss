@@ -1,6 +1,7 @@
 $main-color: #6394f8;
 $light-text: #abb0be;
 $color-brand: #29aafe;
+$color-opacity: #092c35;
 
 @import url(https://fonts.googleapis.com/css?family=Lato:300,400,700);
 
@@ -21,8 +22,9 @@ body {
 }
 
 button {
-  background: #7f4814;
+  background: $color-brand;
   border-color: transparent;
+  background-color: $color-brand;
   border-radius: 60px;
   color: white;
   display: block;
@@ -30,10 +32,11 @@ button {
   padding: 7px;
   text-align: center;
   text-decoration: none;
-  transition: color 0.2s linear;
+  transition: color 0.3s linear;
 
   &:hover {
-    color: $color-brand;
+    cursor: pointer;
+    color: $color-opacity;
     text-decoration: none;
   }
 }
