@@ -43,11 +43,11 @@ const ProductEdit = () => {
         body: formData,
       };
 
-      console.log('huarcaya front 1:', file);
+      console.log('silverio front 1:', file);
       try {
         const response = await fetch('http://localhost:8080/api/upload/file', payload);
         const data = await response.json();
-        console.log('callañaupa-data', data);
+        console.log('huarcaya-data', data);
 
         // const response = await axios.post('http://localhost:8080/api/upload/file', formData);
 
