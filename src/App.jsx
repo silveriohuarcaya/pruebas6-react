@@ -4,8 +4,11 @@ import './App.css';
 import Home from './pages/Home';
 import Login from './pages/Sign/Login';
 import Register from './pages/Sign/Register';
+import Account from './pages/Sign/Account';
+import ForgotPassword from './pages/Sign/ForgotPassword';
 import SignOut from './pages/Sign/SignOut';
 import VerifyAccount from './pages/VerifyAccount';
+import VerifyPassword from './pages/VerifyPassword';
 import Product from './pages/Product';
 import ProductAdmin from './pages/ProductAdmin';
 import ProductAdd from './pages/ProductAdmin/ProductAdd';
@@ -26,8 +29,11 @@ const App = () => (
     <Route path="/product-Admin/product-Edit" element={<ProductEdit />} />
     <Route path="/login" element={<Login />} />
     <Route path="/register" element={<Register />} />
+    <Route path="/account" element={<Account />} />
+    <Route path="/forgot-Password" element={<ForgotPassword />} />
     <Route path="/signOut" element={<SignOut />} />
     <Route path="/verify-Account/:token" element={<VerifyAccount />} />
+    <Route path="/verify-Password/:token" element={<VerifyPassword />} />
     <Route path="/verify-Email" element={<VerifyEmail />} />
     <Route path="/mercadopago/success" element={<h1>Success</h1>} />
     <Route path="/mercadopago/failure" element={<h1>Failure</h1>} />

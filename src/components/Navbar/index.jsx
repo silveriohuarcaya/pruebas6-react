@@ -54,7 +54,7 @@ const Navbar = () => {
               </ul>
             </li>
 
-            {profile?.role === 'admin' ? (
+            {token && profile?.role === 'admin' ? (
               <li>
                 <div className="navbar__link">Admin</div>
 
@@ -109,7 +109,7 @@ const Navbar = () => {
 
                 <ul className="navbar__sub-menu">
                   <li>
-                    <Link className="navbar__link" to="/">
+                    <Link className="navbar__link" to="/account">
                       Account
                     </Link>
                   </li>

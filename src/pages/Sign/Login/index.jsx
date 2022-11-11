@@ -1,14 +1,13 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
+import swal from 'sweetalert';
 import logo from '../../../img/fondo.jpg';
 import './index.scss';
 import { login } from '../../../services/auth';
 
 const Login = () => {
   const navigate = useNavigate();
-  const [loginError, setLoginError] = useState(false);
-  const [activeLogin, setActiveLogin] = useState(false);
   const [form, setForm] = useState({});
 
   const handleChange = (e) => {
@@ -19,11 +18,19 @@ const Login = () => {
     try {
       const response = await login(form);
       if (response.error === 'Password incorrect' || response.error === 'Email not found') {
-        setActiveLogin(false);
-        setLoginError(true);
+        swal({
+          title: 'Error',
+          text: 'Email or Password incorrect',
+          icon: 'error',
+          button: 'Ok',
+        });
       } else if (!response.profile.isActive) {
-        setActiveLogin(true);
-        setLoginError(false);
+        swal({
+          title: 'Error',
+          text: 'First activate your email',
+          icon: 'error',
+          button: 'Ok',
+        });
       } else {
         const { token, profile } = response;
         localStorage.setItem('token', token);
@@ -76,9 +83,10 @@ const Login = () => {
                   onChange={handleChange}
                   required
                 />
-                {loginError ? <span>Email or Password incorrect</span> : <p> </p>}
-                {activeLogin ? <span>First activate your email</span> : <p> </p>}
               </div>
+              <Link className="login__link" to="/forgot-Password">
+                <span>Forgot your password?</span>
+              </Link>
 
               <button className="login__form-button" type="submit">
                 Login
