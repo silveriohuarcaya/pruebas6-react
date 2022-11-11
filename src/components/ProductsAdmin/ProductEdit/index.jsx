@@ -44,12 +44,11 @@ const ProductEdit = () => {
       };
 
       try {
-        const response = await fetch('http://localhost:8080/api/upload/file', payload);
+        const response = await fetch(`${process.env.REACT_APP_API_BASE_URL}/api/upload/file`, payload);
         const data = await response.json();
 
         // const response = await axios.post('http://localhost:8080/api/upload/file', formData);
 
-        // console.log('wilfredo front 3', response.data.url);
         setImage(data.url);
 
         const formObject = {

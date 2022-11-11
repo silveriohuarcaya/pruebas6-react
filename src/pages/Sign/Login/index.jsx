@@ -35,6 +35,13 @@ const Login = () => {
         const { token, profile } = response;
         localStorage.setItem('token', token);
         localStorage.setItem('profile', JSON.stringify(profile));
+        swal({
+          title: 'Success',
+          text: 'User logged in',
+          icon: 'success',
+          timer: '1500',
+          button: 'Ok',
+        });
         navigate('/');
       }
     } catch (error) {

@@ -1,14 +1,13 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
+import swal from 'sweetalert';
 import logo from '../../../img/fondo.jpg';
 import './index.scss';
 import { register } from '../../../services/auth';
 
 const Register = () => {
   const navigate = useNavigate();
-  const [registerError, setRegisterError] = useState(false);
-  const [activeRegister, setActiveRegister] = useState(false);
   const [form, setForm] = useState({});
 
   const handleChange = (e) => {
@@ -21,19 +20,35 @@ const Register = () => {
       const response = await register(form);
 
       if (response.error?.name === 'ValidationError') {
-        setActiveRegister(true);
-        setRegisterError(false);
+        swal({
+          title: 'Error',
+          text: 'Password min 6 characters',
+          icon: 'error',
+          button: 'Ok',
+        });
       }
 
       if (response.error?.keyPattern.email === 1) {
-        setActiveRegister(false);
-        setRegisterError(true);
+        swal({
+          title: 'Error',
+          text: 'This email is registered',
+          icon: 'error',
+          button: 'Ok',
+        });
       }
 
       if (!response.error) {
         const { token, profile } = response;
         localStorage.setItem('token', token);
         localStorage.setItem('profile', JSON.stringify(profile));
+        swal({
+          title: 'Success',
+          text: 'User registered',
+          icon: 'success',
+          timer: '1500',
+          button: 'Ok',
+        });
+
         navigate('/verify-Email');
       }
     } catch (error) {
@@ -105,8 +120,6 @@ const Register = () => {
                   onChange={handleChange}
                   required
                 />
-                {registerError ? <span>This email is registered</span> : <p> </p>}
-                {activeRegister ? <span>Password min 6 characters</span> : <p> </p>}
               </div>
 
               <button className="register__form-button" type="submit">
