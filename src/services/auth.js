@@ -18,7 +18,46 @@ export async function register(auth) {
     },
     body: JSON.stringify(auth),
   };
+
   const response = await fetch(`${process.env.REACT_APP_API_BASE_URL}/auth/local/register`, options);
+  return response.json();
+}
+
+export async function updateAccount(auth) {
+  const options = {
+    method: 'PATCH',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${auth.token}`,
+    },
+    body: JSON.stringify(auth),
+  };
+  const response = await fetch(`${process.env.REACT_APP_API_BASE_URL}/api/users/${auth.id}`, options);
+  return response.json();
+}
+
+export async function deleteAccount(auth) {
+  const options = {
+    method: 'DELETE',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${auth.token}`,
+    },
+    body: JSON.stringify(auth),
+  };
+  const response = await fetch(`${process.env.REACT_APP_API_BASE_URL}/api/users/${auth.id}`, options);
+  return response.json();
+}
+
+export async function forgotPassword(auth) {
+  const options = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(auth),
+  };
+  const response = await fetch(`${process.env.REACT_APP_API_BASE_URL}/auth/local/forgot-password`, options);
   return response.json();
 }
 

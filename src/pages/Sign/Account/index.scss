@@ -1,0 +1,178 @@
+$color-brand: #29aafe;
+$color-green: #3fc915;
+
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css);
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.account__container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  background: black;
+  padding: 2em 2em 1em 2em;
+
+  .account__left {
+    width: 10%;
+    height: 100%;
+
+    .account__link {
+      padding: 0;
+
+      img {
+        border-radius: 50%;
+        width: 8em;
+        height: 8em;
+      }
+    }
+  }
+
+  .account__right {
+    width: 75%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+
+    .account__card {
+      // border-radius: 2rem;
+      // box-shadow: 0.2rem 1rem 1rem rgba(0, 0, 0, 0.3);
+      width: 25rem;
+      height: 100%;
+      // background-color: rgb(212, 28, 120);
+      color: var(--white-text);
+
+      form {
+        width: 100%;
+        height: 100%;
+
+        .account__form-title {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          font-size: 1.5rem;
+
+          h1 {
+            margin: 1em 0 1.7em 0;
+            // letter-spacing: 0.1rem;
+            font-size: 1.8rem;
+          }
+        }
+
+        .account__form-content {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+          padding: 1rem;
+          height: 23rem;
+
+          .account__form-group {
+            display: flex;
+            flex-direction: column;
+            width: 80%;
+            height: 5rem;
+
+            .account__form-input {
+              border: none;
+              border-radius: 2rem;
+              color: rgb(97, 94, 94);
+              font-size: 1rem;
+              margin-top: 0.2rem;
+              margin-bottom: 0.6rem;
+              padding: 0.7rem;
+              width: 100%;
+              height: 2.2rem;
+            }
+
+            p {
+              font-size: 0.9rem;
+            }
+          }
+
+          span {
+            font-size: 15px;
+            display: flex;
+            justify-content: center;
+            transition: color 0.2s linear;
+            color: $color-brand;
+            font-weight: bold;
+          }
+
+          .account__form-group--display {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-evenly;
+            width: 100%;
+
+            .account__form-button {
+              width: 6rem;
+            }
+          }
+        }
+      }
+    }
+  }
+  .account__shooping {
+    width: 15%;
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+
+    .account__button {
+      width: 6rem;
+      height: 4rem;
+      margin: 0;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .account__container {
+      flex-direction: column;
+      padding: 1em;
+      .account__left {
+        height: 10%;
+        width: 100%;
+        .account__link {
+          height: 100%;
+
+          img {
+            height: 100%;
+            width: 100%;
+          }
+        }
+      }
+
+      .account__right {
+        margin-top: 1em;
+        width: 100%;
+        height: 90%;
+        align-items: flex-start;
+
+        .account__card {
+          width: 16rem;
+
+          .account__form-top {
+            padding: 2vh;
+            display: flex;
+            justify-content: center;
+
+            .account__img {
+              width: 100px;
+              height: 100px;
+            }
+          }
+
+          .account__form-content {
+            width: 16rem;
+          }
+        }
+      }
+    }
+  }
+}

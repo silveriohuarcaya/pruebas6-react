@@ -29,6 +29,7 @@ const Register = () => {
         setActiveRegister(false);
         setRegisterError(true);
       }
+
       if (!response.error) {
         const { token, profile } = response;
         localStorage.setItem('token', token);

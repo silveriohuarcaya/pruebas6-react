@@ -9,7 +9,7 @@ const ProductItemAdmin = ({ product }) => {
   const { name, price, img, _id } = product;
   const { dispatch } = useAppContext();
 
-  const deleteHandleClick = async () => {
+  const handleClickDelete = async () => {
     swal({
       title: 'Delete',
       text: 'Are you sure you want to remove this product?',
@@ -47,7 +47,7 @@ const ProductItemAdmin = ({ product }) => {
     });
   };
 
-  const editHandleClick = () => {
+  const handleClickEdit = () => {
     const Action = {
       type: 'DELETE_TO_CART',
       payload: [],
@@ -77,10 +77,10 @@ const ProductItemAdmin = ({ product }) => {
         </div>
       </div>
       <div className="productAdmin__button">
-        <button type="button" className="admin__button" onClick={deleteHandleClick}>
+        <button type="button" className="admin__button" onClick={handleClickDelete}>
           Delete
         </button>
-        <button type="button" className="admin__button" onClick={editHandleClick}>
+        <button type="button" className="admin__button" onClick={handleClickEdit}>
           Edit
         </button>
       </div>
