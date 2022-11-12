@@ -43,9 +43,11 @@ const ProductEdit = () => {
         body: formData,
       };
 
+      console.log('silverio front 1:', file);
       try {
         const response = await fetch(`${process.env.REACT_APP_API_BASE_URL}/api/upload/file`, payload);
         const data = await response.json();
+        console.log('huarcaya-data', data);
 
         // const response = await axios.post('http://localhost:8080/api/upload/file', formData);
 
