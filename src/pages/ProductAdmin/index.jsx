@@ -1,7 +1,7 @@
 import { Link, useNavigate } from 'react-router-dom';
 
 import logo from '../../img/fondo.jpg';
-import ProductListAdmin from './ProductListAdmin';
+import ProductListAdmin from '../../components/ProductsAdmin/ProductListAdmin';
 
 import './index.scss';
 

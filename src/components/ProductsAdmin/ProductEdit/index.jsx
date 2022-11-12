@@ -1,17 +1,21 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+// import axios from 'axios';
 import { useAppContext } from '../../../store';
-import { getProducts, createProduct } from '../../../services/Products';
+import { getProducts, updateProduct } from '../../../services/Products';
 
 import logo from '../../../img/fondo.jpg';
 import './index.scss';
 
-const ProductAdd = () => {
+const ProductEdit = () => {
   const navigate = useNavigate();
-  const { dispatch } = useAppContext();
+  const { state, dispatch } = useAppContext();
+
+  const { name, description, price, img, _id } = state.cart[0];
+
   const [form, setForm] = useState({});
   const [file, setFile] = useState(null);
-  const [image, setImage] = useState(null);
+  const [image, setImage] = useState(img);
 
   const handleClickCancel = () => {
     navigate('/product-Admin');
@@ -21,14 +25,13 @@ const ProductAdd = () => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleChangeImg = (e) => {
-    setFile(e.target.files[0]);
-    const urlImage = URL.createObjectURL(e.target.files[0]);
+  const handleChangeImg = (evt) => {
+    setFile(evt.target.files[0]);
+    const urlImage = URL.createObjectURL(evt.target.files[0]);
     setImage(urlImage);
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const handleUploadFile = async () => {
     if (file) {
       const formData = new FormData();
 
@@ -40,19 +43,25 @@ const ProductAdd = () => {
         body: formData,
       };
 
+      console.log('silverio front 1:', file);
       try {
-        const response = await fetch('http://localhost:8080/api/upload/file', payload);
+        const response = await fetch(`${process.env.REACT_APP_API_BASE_URL}/api/upload/file`, payload);
         const data = await response.json();
+        console.log('huarcaya-data', data);
+
+        // const response = await axios.post('http://localhost:8080/api/upload/file', formData);
+
         setImage(data.url);
 
         const formObject = {
           ...form,
           img: data.url,
+          id: _id,
         };
 
         setForm(formObject);
 
-        await createProduct(formObject);
+        await updateProduct(formObject);
 
         const products = await getProducts();
         const action = {
@@ -68,10 +77,11 @@ const ProductAdd = () => {
     } else {
       const formObject = {
         ...form,
+        id: _id,
       };
       setForm(formObject);
 
-      await createProduct(formObject);
+      await updateProduct(formObject);
 
       const products = await getProducts();
       const action = {
@@ -85,75 +95,78 @@ const ProductAdd = () => {
   };
 
   return (
-    <div className="productAdd__container">
-      <div className="productAdd__left">
-        <Link className="productAdd__link" to="/product-Admin">
+    <div className="productEdit__container">
+      <div className="productEdit__left">
+        <Link className="productEdit__link" to="/product-Admin">
           <img src={logo} alt="logo" />
         </Link>
       </div>
 
-      <div className="productAdd__right">
-        <div className="productAdd__card">
-          <form onSubmit={handleSubmit}>
-            <div className="productAdd__form-top">
-              <img className="productAdd__img" src={image} alt="Img" />
+      <div className="productEdit__right">
+        <div className="productEdit__card">
+          <form>
+            <div className="productEdit__form-top">
+              <img className="productEdit__img" src={image} alt="Img" />
             </div>
 
-            <div className="productAdd__form-content">
-              <div className="productAdd__form-group">
+            <div className="productEdit__form-content">
+              <div className="productEdit__form-group">
                 <p>name</p>
                 <input
                   type="text"
-                  className="productAdd__form-input"
+                  className="productEdit__form-input"
                   name="name"
-                  placeholder="Name"
+                  defaultValue={name}
+                  placeholder="name"
                   onChange={handleChange}
                   required
                 />
               </div>
 
-              <div className="productAdd__form-group">
+              <div className="productEdit__form-group">
                 <p>description</p>
                 <input
                   type="text"
-                  className="productAdd__form-input"
+                  className="productEdit__form-input"
                   name="description"
-                  placeholder="Description"
+                  defaultValue={description}
+                  placeholder="description"
                   onChange={handleChange}
                   required
                 />
               </div>
 
-              <div className="productAdd__form-group">
+              <div className="productEdit__form-group">
                 <p>price</p>
                 <input
                   type="text"
-                  className="productAdd__form-input"
+                  className="productEdit__form-input"
                   name="price"
-                  placeholder="Price"
+                  defaultValue={price}
+                  placeholder="price"
                   onChange={handleChange}
                   required
                 />
               </div>
 
-              <div className="productAdd__form-group">
+              <div className="productEdit__form-group">
                 <p>img</p>
                 <input
                   type="file"
                   name="file"
-                  className="productAdd__form-input productAdd-img"
-                  id="file_product"
+                  className="productEdit__form-input productEdit-img"
+                  id="file"
                   placeholder="Img"
                   onChange={handleChangeImg}
                   accept="image/*"
                 />
               </div>
 
-              <div className="productAdd__form-group--display">
-                <button className="productAdd__form-button" type="button" onClick={handleClickCancel}>
+              <div className="productEdit__form-group--display">
+                <button className="productEdit__form-button" type="button" onClick={handleClickCancel}>
                   Cancel
                 </button>
-                <button className="productAdd__form-button" type="submit">
+                <button className="productEdit__form-button" type="button" onClick={handleUploadFile}>
                   Save
                 </button>
               </div>
@@ -164,4 +177,4 @@ const ProductAdd = () => {
     </div>
   );
 };
-export default ProductAdd;
+export default ProductEdit;

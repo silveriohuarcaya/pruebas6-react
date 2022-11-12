@@ -11,8 +11,6 @@ const Account = () => {
   const profile = JSON.parse(localStorage.getItem('profile'));
 
   const navigate = useNavigate();
-  const [registerError, setRegisterError] = useState(false);
-  const [activeRegister, setActiveRegister] = useState(false);
   const [form, setForm] = useState({});
 
   const handleClickCancel = () => {
@@ -73,19 +71,28 @@ const Account = () => {
         try {
           const formData = {
             ...form,
+            password: form.password?.trim(),
             token,
             id: profile._id,
           };
           const response = await updateAccount(formData);
 
           if (response.error === 'Password incorrect') {
-            setActiveRegister(true);
-            setRegisterError(false);
+            swal({
+              title: 'Error',
+              text: 'Password min 6 characters',
+              icon: 'error',
+              button: 'Ok',
+            });
           }
 
           if (response.error?.keyPattern.email === 1) {
-            setActiveRegister(false);
-            setRegisterError(true);
+            swal({
+              title: 'Error',
+              text: 'This email is registered',
+              icon: 'error',
+              button: 'Ok',
+            });
           }
 
           if (!response.error) {
@@ -176,8 +183,6 @@ const Account = () => {
                   onChange={handleChange}
                   // required
                 />
-                {registerError ? <span>This email is registered</span> : <p> </p>}
-                {activeRegister ? <span>Password min 6 characters</span> : <p> </p>}
               </div>
 
               <div className="account__form-group--display">
