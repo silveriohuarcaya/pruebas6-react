@@ -192,17 +192,14 @@ const Account = () => {
                 <button className="account__form-button" type="submit">
                   Update
                 </button>
-                <button className="account__form-button" type="button" onClick={handleClickDelete}>
-                  Delete
-                </button>
               </div>
             </div>
           </form>
         </div>
       </div>
       <div className="account__shooping">
-        <button className="account__button" type="button">
-          Shooping
+        <button className="account__button" type="button" onClick={handleClickDelete}>
+          Delete
         </button>
       </div>
     </div>

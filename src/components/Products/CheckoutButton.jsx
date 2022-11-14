@@ -8,7 +8,7 @@ const CheckoutButton = () => {
   };
   return (
     <button type="button" className="button" onClick={handleClick}>
-      Checkout
+      Stripe
     </button>
   );
 };
