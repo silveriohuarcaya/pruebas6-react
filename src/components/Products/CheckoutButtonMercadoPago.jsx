@@ -11,16 +11,16 @@ const CheckoutButton = () => {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(products.map((product) => product._id)),
+      body: JSON.stringify(products),
+      // body: JSON.stringify(products.map((product) => product._id)),
     };
-
     const response = await fetch(`${process.env.REACT_APP_API_BASE_URL}/api/preferences/orders`, options);
     const data = await response.json();
     Preference(data);
   };
   return (
     <button type="button" className="button" onClick={handleClick}>
-      Checkout
+      MercadoPago
     </button>
   );
 };

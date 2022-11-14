@@ -17,62 +17,70 @@ const CheckoutForm = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    swal({
+      title: 'Payment',
+      text: 'Are you sure you want to pay?',
+      icon: 'warning',
+      buttons: ['Cancel', 'Ok'],
+    }).then(async (resp) => {
+      if (resp) {
+        const { error, paymentMethod } = await stripe.createPaymentMethod({
+          type: 'card',
+          card: elements.getElement(CardElement),
+        });
 
-    const { error, paymentMethod } = await stripe.createPaymentMethod({
-      type: 'card',
-      card: elements.getElement(CardElement),
+        if (error) {
+          console.log('[error]', error);
+          return;
+        }
+
+        const options = {
+          method: 'POST',
+          headers: {
+            'content-type': 'application/json',
+            Authorization: `Bearer ${localStorage.getItem('token')}`,
+          },
+          body: JSON.stringify({
+            paymentMethod,
+            amount: Intl.NumberFormat('en-US').format(state.total) * 100, // cents -> $100
+          }),
+        };
+        const response = await fetch(`${BASE_URL}/api/payments`, options);
+        const body = await response.json();
+
+        if (body.status === 'succeeded') {
+          await sendEmail(body);
+
+          swal({
+            title: 'Success',
+            text: 'Invoice sent to your email',
+            icon: 'success',
+            button: 'Ok',
+          });
+
+          const action = {
+            type: 'DELETE_TO_CART',
+            payload: [],
+          };
+          dispatch(action);
+        } else if (body.message) {
+          swal({
+            title: body.message,
+            text: 'Go back to Login',
+            icon: 'error',
+            button: 'Ok',
+          });
+        } else {
+          swal({
+            title: body.code,
+            text: body.code,
+            icon: 'error',
+            button: 'Ok',
+          });
+        }
+        elements.getElement(CardElement).clear();
+      }
     });
-
-    if (error) {
-      console.log('[error]', error);
-      return;
-    }
-
-    const options = {
-      method: 'POST',
-      headers: {
-        'content-type': 'application/json',
-        Authorization: `Bearer ${localStorage.getItem('token')}`,
-      },
-      body: JSON.stringify({
-        paymentMethod,
-        amount: Intl.NumberFormat('en-US').format(state.total) * 100, // cents -> $100
-      }),
-    };
-    const response = await fetch(`${BASE_URL}/api/payments`, options);
-    const body = await response.json();
-
-    if (body.status === 'succeeded') {
-      await sendEmail(body);
-
-      swal({
-        title: 'Success',
-        text: 'Invoice sent to your email',
-        icon: 'success',
-        button: 'Ok',
-      });
-
-      const action = {
-        type: 'DELETE_TO_CART',
-        payload: [],
-      };
-      dispatch(action);
-    } else if (body.message) {
-      swal({
-        title: body.message,
-        text: 'Go back to Login',
-        icon: 'error',
-        button: 'Ok',
-      });
-    } else {
-      swal({
-        title: body.code,
-        text: body.code,
-        icon: 'error',
-        button: 'Ok',
-      });
-    }
-    elements.getElement(CardElement).clear();
   };
 
   return (

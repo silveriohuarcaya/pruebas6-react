@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import Login from './pages/Sign/Login';
 import Register from './pages/Sign/Register';
 import Account from './pages/Sign/Account';
+import Shooping from './pages/Shooping';
 import ForgotPassword from './pages/Sign/ForgotPassword';
 import SignOut from './pages/Sign/SignOut';
 import VerifyAccount from './pages/VerifyAccount';
@@ -30,6 +31,7 @@ const App = () => (
     <Route path="/login" element={<Login />} />
     <Route path="/register" element={<Register />} />
     <Route path="/account" element={<Account />} />
+    <Route path="/shooping" element={<Shooping />} />
     <Route path="/forgot-Password" element={<ForgotPassword />} />
     <Route path="/signOut" element={<SignOut />} />
     <Route path="/verify-Account/:token" element={<VerifyAccount />} />

@@ -14,12 +14,12 @@ const VerifyPassword = () => {
   const [form, setForm] = useState({});
 
   const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
+    setForm({ ...form, [e.target.name]: e.target.value.trim() });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (form.password.trim() && form.password.trim().length >= 6) {
+    if (form.password && form.password.length >= 6) {
       swal({
         title: 'Update',
         text: 'Are you sure you want to Reset Password?',
@@ -32,7 +32,7 @@ const VerifyPassword = () => {
 
             if (data.message === 'Account activated') {
               const formData = {
-                password: form.password.trim(),
+                // password: form.password.trim(),
                 token: data.token,
                 id: data.profile._id,
               };

@@ -11,7 +11,7 @@ const Register = () => {
   const [form, setForm] = useState({});
 
   const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
+    setForm({ ...form, [e.target.name]: e.target.value.trim() });
   };
 
   const handleSubmit = async (e) => {

@@ -114,6 +114,11 @@ const Navbar = () => {
                     </Link>
                   </li>
                   <li>
+                    <Link className="navbar__link" to="/shooping">
+                      Shooping
+                    </Link>
+                  </li>
+                  <li>
                     <Link className="navbar__link" to="/signOut">
                       Sign Out
                     </Link>

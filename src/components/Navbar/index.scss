@@ -123,15 +123,15 @@ $color-button: #2f1ae7;
   text-decoration: none;
 }
 
-> li {
-  position: relative;
-  display: inline-block;
-  padding: 0 2px;
+// > li {
+//   position: relative;
+//   display: inline-block;
+//   padding: 0 2px;
 
-  &:hover > a {
-    color: $color-brand;
-  }
-}
+//   &:hover > a {
+//     color: $color-brand;
+//   }
+// }
 
 a {
   display: inline-block;
