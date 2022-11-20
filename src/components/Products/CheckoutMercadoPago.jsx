@@ -1,7 +1,7 @@
 import { useAppContext } from '../../store';
 import Preference from '../Preference';
 
-const CheckoutButton = () => {
+const CheckoutMercadoPago = () => {
   const { state } = useAppContext();
   const products = state.cart;
 
@@ -24,4 +24,4 @@ const CheckoutButton = () => {
     </button>
   );
 };
-export default CheckoutButton;
+export default CheckoutMercadoPago;

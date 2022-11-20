@@ -1,8 +1,8 @@
 import Badge from './Badge';
 import Total from './Total';
 import CartList from './CartList';
-import CheckoutButtonMercadoPago from './CheckoutButtonMercadoPago';
-import CheckoutButton from './CheckoutButton';
+import CheckoutMercadoPago from './CheckoutMercadoPago';
+import CheckoutStripe from './CheckoutStripe';
 import ClearButton from './ClearButton';
 
 const ShoppingCart = () => (
@@ -15,8 +15,8 @@ const ShoppingCart = () => (
 
     <CartList />
     <div className="shopping-cart-footer">
-      <CheckoutButtonMercadoPago />
-      <CheckoutButton />
+      <CheckoutMercadoPago />
+      <CheckoutStripe />
       <ClearButton />
     </div>
   </div>

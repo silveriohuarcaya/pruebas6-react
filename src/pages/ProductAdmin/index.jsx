@@ -11,6 +11,7 @@ const ProductAdmin = () => {
   const handleClick = () => {
     navigate('/product-Admin/product-Add');
   };
+
   return (
     <div className="productAdmin__container">
       <div className="productAdmin-list">

@@ -13,7 +13,6 @@ const Preference = (data) => {
     },
     autoOpen: true,
   });
-  console.log('wilfredo', checkout);
 };
 
 export default Preference;
