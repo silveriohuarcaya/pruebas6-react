@@ -17,6 +17,9 @@ import ProductEdit from './components/ProductsAdmin/ProductEdit';
 import VerifyEmail from './pages/VerifyEmail';
 import Payment from './components/Payment';
 import Preference from './components/Preference';
+import Success from './pages/MercadoPago/Success';
+import Failure from './pages/MercadoPago/Failure';
+import Pending from './pages/MercadoPago/Pending';
 import UploadPage from './pages/Upload';
 
 const App = () => (
@@ -37,9 +40,9 @@ const App = () => (
     <Route path="/verify-Account/:token" element={<VerifyAccount />} />
     <Route path="/verify-Password/:token" element={<VerifyPassword />} />
     <Route path="/verify-Email" element={<VerifyEmail />} />
-    <Route path="/mercadopago/success" element={<h1>Success</h1>} />
-    <Route path="/mercadopago/failure" element={<h1>Failure</h1>} />
-    <Route path="/mercadopago/pending" element={<h1>Pending</h1>} />
+    <Route path="/mercadopago/success" element={<Success />} />
+    <Route path="/mercadopago/failure" element={<Failure />} />
+    <Route path="/mercadopago/pending" element={<Pending />} />
     <Route path="/upload" element={<UploadPage />} />
   </Routes>
 );

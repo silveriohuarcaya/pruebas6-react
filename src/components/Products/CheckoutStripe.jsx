@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 
-const CheckoutButton = () => {
+const CheckoutStripe = () => {
   const navigate = useNavigate();
 
   const handleClick = async () => {
@@ -12,4 +12,4 @@ const CheckoutButton = () => {
     </button>
   );
 };
-export default CheckoutButton;
+export default CheckoutStripe;
